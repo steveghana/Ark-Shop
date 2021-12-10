@@ -4,7 +4,12 @@ import Productinfo from "../productinfo/productinfo";
 import "./homeSelection.css";
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
-import { img1Hover, reset, selectedProduct, description } from "./animations/all";
+import {
+  img1Hover,
+  reset,
+  selectedProduct,
+  description,
+} from "./animations/all";
 import { UIcontext } from "../uicontext";
 
 //////////////
@@ -12,7 +17,21 @@ import { UIcontext } from "../uicontext";
 function Homepage() {
   const productInfo = useSelector((state) => state.products);
 
-  const { setState, setbackground, productinformation, setincrement, deletebtn, setdeletebtn, selectedItem, setSelectedItem, revert, setrevert, imageindex, setimageindex, mobileinfo } = useContext(UIcontext)
+  const {
+    setState,
+    setbackground,
+    productinformation,
+    setincrement,
+    deletebtn,
+    setdeletebtn,
+    selectedItem,
+    setSelectedItem,
+    revert,
+    setrevert,
+    imageindex,
+    setimageindex,
+    mobileinfo,
+  } = useContext(UIcontext);
 
   const images1 = useRef(null);
   const images2 = useRef(null);
@@ -20,16 +39,12 @@ function Homepage() {
   const images4 = useRef(null);
   const homeContainer = useRef(null);
   const morebutton = useRef(null);
-  //  
+  //
   useEffect(() => {
     if (!deletebtn && revert) {
-
       normalise(homeContainer, morebutton);
-
     }
-
   }, [revert, deletebtn, productinformation, selectedItem, imageindex]);
-
 
   const renderingRefs = (index) => {
     if (index === 0) return images1;
@@ -46,29 +61,83 @@ function Homepage() {
           <div
             className="home-selection"
             ref={homeContainer}
-            style={{ minHeight: productinformation && "0%", filter: mobileinfo ? "blur(300px)" : "blur(0px)", pointerEvents: mobileinfo ? "none" : "all" }}
-            onMouseOut={(e) => reset(images1.current, images2.current, images3.current, images4.current)}>
+            style={{
+              minHeight: productinformation && "0%",
+              filter: mobileinfo ? "blur(300px)" : "blur(0px)",
+              pointerEvents: mobileinfo ? "none" : "all",
+            }}
+            onMouseOut={(e) =>
+              reset(
+                images1.current,
+                images2.current,
+                images3.current,
+                images4.current
+              )
+            }
+          >
             <Nav morebutton={morebutton} />
-            <div className="productDescriptionButton" ref={morebutton} style={{ visibility: productinformation ? "hidden" : "visible" }}
+            <div
+              className="productDescriptionButton"
+              ref={morebutton}
+              style={{ visibility: productinformation ? "hidden" : "visible" }}
               onClick={(e) => {
-                setimageindex(0)
-                showDescription(homeContainer, morebutton, e, setincrement);
-              }}>
+                setimageindex(0);
+                showDescription(
+                  homeContainer,
+                  morebutton,
+                  e,
+                  setincrement,
+                  setdeletebtn
+                );
+              }}
+            >
               View More
             </div>
 
             {productInfo.map((product, index) => (
-              <div key={product._id} className={`select select${index + 1}`} ref={renderingRefs(index)}
+              <div
+                key={product._id}
+                className={`select select${index + 1}`}
+                ref={renderingRefs(index)}
                 onClick={(e) => {
-                  enableFullInterface(setdeletebtn, e, homeContainer, morebutton, setState, product, index, setSelectedItem, setrevert);
+                  enableFullInterface(
+                    setdeletebtn,
+                    e,
+                    homeContainer,
+                    morebutton,
+                    setState,
+                    product,
+                    index,
+                    setSelectedItem,
+                    setrevert
+                  );
                 }}
                 onMouseEnter={(e) => {
                   setbackground(product.color);
-                  img1Hover(e.target, images1.current, images2.current, images3.current, images4.current)
-                }}>
-                <img className={`img img${index + 1}`} src={product.relatedImages[imageindex]} alt={`product ${index}`} style={{ pointerEvents: "none" }} />
+                  img1Hover(
+                    e.target,
+                    images1.current,
+                    images2.current,
+                    images3.current,
+                    images4.current
+                  );
+                }}
+              >
+                <img
+                  className={`img img${index + 1}`}
+                  src={product.relatedImages[imageindex]}
+                  alt={`product ${index}`}
+                  style={{ pointerEvents: "none" }}
+                />
 
-                <div className={`pname product-name${index + 1}`} style={{ visibility: productinformation ? "hidden" : "visible", color: index === 0 || index === 2 ? product.background : "white", }}>
+                <div
+                  className={`pname product-name${index + 1}`}
+                  style={{
+                    visibility: productinformation ? "hidden" : "visible",
+                    color:
+                      index === 0 || index === 2 ? product.background : "white",
+                  }}
+                >
                   {product.name} <br /> <div>{product.sub}</div>
                 </div>
               </div>
@@ -83,14 +152,18 @@ function Homepage() {
 
 export default Homepage;
 
-
-
-
-
-
-
 /////////////
-function enableFullInterface(setdeletebtn, e, homeContainer, morebutton, setState, product, index, setSelectedItem, setrevert) {
+function enableFullInterface(
+  setdeletebtn,
+  e,
+  homeContainer,
+  morebutton,
+  setState,
+  product,
+  index,
+  setSelectedItem,
+  setrevert
+) {
   setdeletebtn(true);
   selectedProduct(e.target, homeContainer.current, morebutton.current);
   setState({
@@ -112,15 +185,23 @@ function enableFullInterface(setdeletebtn, e, homeContainer, morebutton, setStat
     sizes: product.sizes,
     specifications: product.specifications,
     index,
-
   });
   setSelectedItem(e.target);
   setrevert(false);
 }
 
-function showDescription(homeContainer, morebutton, e, setincrement) {
-  description(homeContainer.current, morebutton.current);
-  setTimeout(setincrement((prevshowincrement) => !prevshowincrement), 2000)
+function showDescription(
+  homeContainer,
+  morebutton,
+  e,
+  setincrement,
+  setdeletebtn
+) {
+  description(homeContainer.current, morebutton.current, setdeletebtn);
+  setTimeout(
+    setincrement((prevshowincrement) => !prevshowincrement),
+    2000
+  );
   e.target.classList.contains("move")
     ? (e.target.textContent = "Close Info")
     : (e.target.textContent = "View More");

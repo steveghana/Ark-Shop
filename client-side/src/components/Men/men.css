@@ -1,0 +1,322 @@
+.men_products_container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100vw;
+  background-color: #eceef0;
+  overflow: hidden;
+  position: relative;
+}
+.slide_slide {
+  display: flex;
+}
+.slider_slides {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slider_slides .slide_footer {
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  margin-right: auto;
+  padding-left: 0rem;
+  display: flex;
+  justify-content: space-between;
+}
+.slide_footer .slide_description {
+  display: flex;
+  width: 100%;
+  padding-right: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.slide_description .colors,
+.colors .bar_textcolor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar_textcolor .colorbar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.patterns {
+  min-width: 40%;
+  height: auto;
+}
+
+.svg_wrapper .svg_text {
+  font-family: "Century Gothic";
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: auto;
+  color: transparent;
+  opacity: 1;
+  stroke-width: 2;
+  -webkit-animation: textAnimate 3s infinite alternate;
+  animation: textAnimate 3s infinite alternate;
+}
+
+@-webkit-keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+  }
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: rgba(254, 255, 255, 0);
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: rgba(255, 255, 255, 0);
+  }
+}
+
+.slide_footer .cart_background {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  z-index: 4;
+  color: white;
+  cursor: pointer;
+}
+.product_text {
+  gap: 2rem;
+  font-size: 14px;
+  font-family: "Century Gothic";
+  margin: auto auto 0 auto;
+  z-index: 4;
+  width: 40%;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.product_text p {
+  padding: 0.49rem 0;
+}
+.slider_slides img {
+  display: flex;
+  margin: auto;
+  top: auto;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+  transform: scale(1.3, 1.3);
+  height: 100%;
+  left: auto;
+  right: auto;
+  transition: width 500ms ease-in-out, bottom 500ms ease-in-out;
+  bottom: 10%;
+}
+.arrow_right,
+.arrow_left {
+  z-index: 3;
+  position: absolute;
+  bottom: auto;
+  margin: auto;
+  top: 50vh;
+  padding: 2rem;
+  border-radius: 50%;
+  /* border: 2px solid black; */
+}
+.arrow_right {
+  right: 5%;
+}
+.arrow_left {
+  left: 5%;
+}
+.arrow_left .button--skoll span span {
+  transform: rotate(180deg);
+}
+.arrow_left,
+.arrow_right {
+  transition: 300ms ease-in-out;
+}
+/* .arrow_right:hover,
+.arrow_left:hover {
+  background-color: rgb(218, 218, 218);
+} */
+.arrow_right,
+.arrow_left {
+  list-style-type: none;
+  /* width: 100%; */
+  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: absolute;
+}
+.skoll-button {
+  pointer-events: auto;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background: #000000;
+  color: black;
+  border: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.skoll-button::before,
+.skoll-button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--skoll {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  overflow: hidden;
+  border-radius: 50%;
+  color: rgb(0, 0, 0);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  font-weight: 500;
+  z-index: 4;
+  border: 1px solid black;
+  box-shadow: 1px 1px 3rem 0px white;
+}
+
+.button--skoll span {
+  display: block;
+  position: relative;
+}
+
+.button--skoll > span {
+  overflow: hidden;
+}
+.swipe_txt {
+  display: flex;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  bottom: auto;
+  z-index: 6;
+  right: auto;
+}
+.button--skoll:hover > span > span {
+  color: white;
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+
+.button--skoll::before {
+  content: "";
+  background: rgb(233, 233, 233);
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.button--skoll:hover::before {
+  transform: translate3d(0, 100%, 0);
+}
+@media screen and (max-width: 1000px) {
+  .slider_slides img {
+    transform: scale(1, 1);
+
+    bottom: 10%;
+  }
+  .svg_wrapper .svg_text {
+    font-size: 2rem;
+    stroke-width: 1;
+  }
+  .product_text {
+    font-size: 14px;
+    width: 70%;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slider_slides {
+    flex: 1 0 100%;
+  }
+  .slide_slide {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 2rem;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .arrow_left,
+  .arrow_right {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .slider_slides img {
+    transform: scale(1, 1);
+
+    bottom: 10%;
+  }
+  .svg_wrapper .svg_text {
+    transform: translateY(-10px);
+    font-size: 1rem;
+    stroke-width: 1;
+  }
+  .color_text {
+    display: none;
+  }
+  .product_text {
+    margin: auto;
+    font-size: 12px;
+    width: 70%;
+    margin-bottom: 3rem;
+  }
+  .slider_slides .slide_footer {
+    height: 50px;
+    margin-right: auto;
+  }
+  .slide_description .colors,
+  .colors .bar_textcolor {
+    gap: 0.4rem;
+    justify-content: center;
+  }
+  .bar_textcolor {
+    font-size: 12px;
+  }
+  .bar_textcolor .colorbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .slide_footer .cart_background {
+    width: 25%;
+    padding: 0% 0.5rem;
+    z-index: 4;
+    font-size: 12px;
+    color: white;
+  }
+}

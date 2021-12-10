@@ -1,18 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { UIcontext } from "./uicontext";
+// import Signup from "./Auth/Signup";
 import Homepage from "./Homepage/homepage";
 function Home() {
   const cursor = useRef(null);
-  const [background, setbackground] = useState(null);
-  const initialstate = {id:'', name: "", sub: "", header : "", color: "", price: "", countInStock: "", description: "", ProductColor: "", background: "", numOfReviews : '', image : "", productCode : "", rating : "", relatedimages : "", sizes : "", specifications : "", index : ""}
-const [state, setState] = useState(initialstate)
-  const [productinformation, setproductinformation] = useState(false);
-  const [increment, setincrement] = useState(false)
-  const [deletebtn, setdeletebtn] = useState(null);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [revert, setrevert] = useState(false);
-  const [imageindex, setimageindex]= useState(0)
-const [mobileinfo, setmobileinfo] = useState(false)
+  const { background } = useContext(UIcontext);
   const cursorAnimation = (e) => {
     cursor.current.style.top = e.pageY + "px";
     cursor.current.style.left = e.pageX + "px";
@@ -30,9 +22,7 @@ const [mobileinfo, setmobileinfo] = useState(false)
       >
         <div className="static-backgrond">
           <div className="fullbox">
-            <UIcontext.Provider value={{state, setState ,setbackground, productinformation, setproductinformation, increment, setincrement, deletebtn, setdeletebtn, selectedItem, setSelectedItem, revert, setrevert, imageindex, setimageindex, mobileinfo, setmobileinfo}}>
             <Homepage />
-            </UIcontext.Provider>
           </div>
         </div>
       </div>

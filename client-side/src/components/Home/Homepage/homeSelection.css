@@ -6,9 +6,9 @@
   --NMD-R1-ShoesBlue: #92b8c5;
   --NMD-R1-Swift_Run_X_Shoes_Grey: #ecd3d7;
 }
-.page-loader{
-display: flex;
-margin: auto;
+.page-loader {
+  display: flex;
+  margin: auto;
 }
 
 .home-selection.shrink {
@@ -16,19 +16,18 @@ margin: auto;
 }
 
 .home-selection.shrink .img {
- 
   padding: 3rem;
   -ms-flex-item-align: start;
-      align-self: flex-start;
-          margin-top: -3rem;
-          margin-left: 3rem;
-  -webkit-transition: all 500ms ease-in ;
-  transition: all 500ms ease-in ;
+  align-self: flex-start;
+  margin-top: -3rem;
+  margin-left: 3rem;
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
 }
 
 .home-selection.shrink .pname {
   -webkit-transform: translateX(-20%);
-          transform: translateX(-20%);
+  transform: translateX(-20%);
 }
 
 .home-selection.shrink .pname div {
@@ -42,8 +41,8 @@ margin: auto;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   min-height: 100%;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -61,9 +60,9 @@ margin: auto;
   pointer-events: all;
   opacity: 0.4;
   -webkit-transform: translateX(-1000px);
-          transform: translateX(-1000px);
+  transform: translateX(-1000px);
   border-radius: 50px;
-  padding: .20rem 2rem;
+  padding: 0.2rem 2rem;
   -webkit-transition: opacity 1s ease-in;
   transition: opacity 1s ease-in;
   overflow: hidden;
@@ -71,26 +70,30 @@ margin: auto;
 
 .home-selection .productDescriptionButton.center {
   -webkit-transform: translateX(0px);
-          transform: translateX(0px);
+  transform: translateX(0px);
   left: 45%;
   opacity: 1;
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.075, 0.82, 0.165, 1)
+    500ms;
   transition: -webkit-transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
   transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
-  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms, -webkit-transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms,
+    -webkit-transform 1s cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
 }
 
 .home-selection .productDescriptionButton.move {
   -webkit-transform: translateY(-50px);
-          transform: translateY(-50px);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+  transform: translateY(-50px);
+  -webkit-transition: -webkit-transform 1s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
   transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
-  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s, -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s,
+    -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
 }
 
 .home-selection .productDescriptionButton::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -70%;
   left: -0%;
@@ -98,35 +101,35 @@ margin: auto;
   height: 80px;
   background-color: rgba(255, 255, 255, 0.7);
   -webkit-transform: rotate(16deg) translateX(-39px);
-          transform: rotate(16deg) translateX(-39px);
+  transform: rotate(16deg) translateX(-39px);
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 }
 
-.home-selection .productDescriptionButton:hover.productDescriptionButton::after {
+.home-selection
+  .productDescriptionButton:hover.productDescriptionButton::after {
   -webkit-transform: translateX(10rem);
-          transform: translateX(10rem);
+  transform: translateX(10rem);
 }
- 
+
 .home-selection .select1 img,
 .home-selection .select2 img,
 .home-selection .select3 img,
 .home-selection .select4 img {
   position: absolute;
   -webkit-transform: rotate(50deg) translate(-1%, 10%);
-          transform: rotate(50deg) translate(-1%, 10%);
-          height: 100%;
-          padding: 2rem;
-          -webkit-transition: all 500ms ease-in;
-          transition: all 500ms ease-in;
-        }
-     
-.home-selection .select.open{
-  height: 0%;
-  transition: all 400ms ease-in-out 400ms;
+  transform: rotate(50deg) translate(-1%, 10%);
+  height: 100%;
+  padding: 2rem;
+  -webkit-transition: transform 500ms ease-in;
+  transition: all 500ms ease-in;
+}
 
+.home-selection .select.open {
+  height: 0%;
+  transition: height 400ms ease-in-out 900ms;
 }
 .home-selection .select1,
 .home-selection .select2,
@@ -135,8 +138,8 @@ margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: transform 650ms ease-in-out;
-  transition: transform 650ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
   min-width: 50%;
   height: 100%;
   overflow: hidden;
@@ -146,10 +149,13 @@ margin: auto;
 .home-selection .select2 .pname,
 .home-selection .select3 .pname,
 .home-selection .select4 .pname {
+  font-family: "Kudryashev Headline Sans Web";
+  font-weight: bold;
   position: absolute;
   bottom: 0%;
   left: 5%;
   color: white;
+  font-size: 2rem;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
   opacity: 0;
@@ -177,7 +183,7 @@ margin: auto;
   height: 150px;
   position: absolute;
   -webkit-transform: translateX(-120px);
-          transform: translateX(-120px);
+  transform: translateX(-120px);
   top: -10%;
   left: 0%;
   -webkit-transition: -webkit-transform 1s ease-in;
@@ -211,7 +217,7 @@ margin: auto;
   -webkit-transition: -webkit-transform 1s ease-in;
   transition: transform 1s ease-in;
   -webkit-transform: translateX(15rem);
-          transform: translateX(15rem);
+  transform: translateX(15rem);
   background-color: transparent;
 }
 
@@ -266,19 +272,19 @@ margin: auto;
 .home-selection .select2 {
   background-color: var(--NMD-R1-Primeknite);
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .home-selection .select3 {
   background-color: var(--NMD-R1-Swift_Run_X_Shoes_Grey);
   -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .home-selection .select4 {
   background-color: var(--NMD-R1-ShoesBlue);
   -webkit-transform: translateX(-150%);
-          transform: translateX(-150%);
+  transform: translateX(-150%);
 }
 
 .home-selection .select1:hover .pname {
@@ -287,12 +293,12 @@ margin: auto;
 
 .home-selection .select1:hover .pname::after {
   -webkit-transform: translateX(-15rem);
-          transform: translateX(-15rem);
+  transform: translateX(-15rem);
 }
 
 .home-selection .select1:hover .pname::before {
   -webkit-transform: translateX(15rem);
-          transform: translateX(15rem);
+  transform: translateX(15rem);
 }
 
 .home-selection .select2:hover .pname {
@@ -301,12 +307,12 @@ margin: auto;
 
 .home-selection .select2:hover .pname::after {
   -webkit-transform: translateX(-15rem);
-          transform: translateX(-15rem);
+  transform: translateX(-15rem);
 }
 
 .home-selection .select2:hover .pname::before {
   -webkit-transform: translateX(15rem);
-          transform: translateX(15rem);
+  transform: translateX(15rem);
 }
 
 .home-selection .select3:hover .pname {
@@ -315,12 +321,12 @@ margin: auto;
 
 .home-selection .select3:hover .pname::after {
   -webkit-transform: rotate(-50deg) translateX(-15rem);
-          transform: rotate(-50deg) translateX(-15rem);
+  transform: rotate(-50deg) translateX(-15rem);
 }
 
 .home-selection .select3:hover .pname::before {
   -webkit-transform: rotate(-50deg) translateX(15rem);
-          transform: rotate(-50deg) translateX(15rem);
+  transform: rotate(-50deg) translateX(15rem);
 }
 
 .home-selection .select4:hover .pname {
@@ -329,12 +335,12 @@ margin: auto;
 
 .home-selection .select4:hover .pname::after {
   -webkit-transform: rotate(-50deg) translateX(-15rem);
-          transform: rotate(-50deg) translateX(-15rem);
+  transform: rotate(-50deg) translateX(-15rem);
 }
 
 .home-selection .select4:hover .pname::before {
   -webkit-transform: rotate(-50deg) translateX(15rem);
-          transform: rotate(-50deg) translateX(15rem);
+  transform: rotate(-50deg) translateX(15rem);
 }
 
 .home-selection .grow {
@@ -343,6 +349,10 @@ margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: auto;
+  flex-grow: 1 0 100%;
+  pointer-events: none;
+  /* transform: translateX(40px); */
   min-width: 100%;
   z-index: 1;
 }
@@ -353,14 +363,15 @@ margin: auto;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   font-size: 5rem;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   position: relative;
-  margin: auto 4rem auto auto;
+  margin: auto 6rem auto auto;
+  transition: all 500ms ease;
   opacity: 1;
 }
 
@@ -371,170 +382,154 @@ margin: auto;
 }
 
 .home-selection .grow .img {
-  height: 500px;
+  height: 550px;
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   -webkit-transform: rotate(0deg) translate(-5%, 25%);
-          transform: rotate(0deg) translate(-5%, 25%);
-  -webkit-transition: all 1s ease-in 200ms;
-  transition: all 1s ease-in 200ms;
+  transform: rotate(0deg) translate(-5%, 25%);
+  -webkit-transition: all 800ms ease-in 200ms;
+  transition: all 800ms ease-in 200ms;
 }
 
 @media only screen and (max-width: 1250px) {
   .home-selection .select1 img,
   .home-selection .select2 img,
   .home-selection .select3 img,
-  .home-selection .select4 img{
+  .home-selection .select4 img {
     padding: 6rem;
     -webkit-transform: rotate(50deg) translate(-15%, 15%);
-            transform: rotate(50deg) translate(-15%, 15%);
+    transform: rotate(50deg) translate(-15%, 15%);
+  }
+  .home-selection .grow .pname {
+    transform: translateY(-50%);
+  }
+  .home-selection.shrink .img {
+    height: 500px;
+    -webkit-transition: all 700ms ease-in;
+    transition: all 700ms ease-in;
+    -webkit-transform: rotate(0deg) translate(-20%, -0%);
+    transform: rotate(0deg) translate(-20%, -0%);
+    margin-top: 0rem;
+  }
 
-}
-.home-selection .grow .pname {
-  transform: translateY(-50%);
-
-}
-.home-selection.shrink .img {
-  height: 500px;
-  -webkit-transition: all 700ms ease-in;
-  transition: all 700ms ease-in;
-  -webkit-transform: rotate(0deg) translate(-20%, -0%);
-  transform: rotate(0deg) translate(-20%, -0%);
-  margin-top: 0rem;
-
-}
-
-.home-selection.shrink .pname {
-  font-size: 4rem;
--webkit-transform: translateX(-5%);
-  transform: translateX(-5%);
-}
-.home-selection .grow .pname div {
-  -webkit-transition: margin 1s ease-in-out;
-  transition: margin 1s ease-in-out;
-  font-size: 2rem;
-}
+  .home-selection.shrink .pname {
+    font-size: 4rem;
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+  }
+  .home-selection .grow .pname div {
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    font-size: 2rem;
+  }
 }
 @media only screen and (max-width: 900px) {
   .home-selection .select1 img,
   .home-selection .select2 img,
   .home-selection .select3 img,
-  .home-selection .select4 img{
+  .home-selection .select4 img {
     padding: 10rem;
     -webkit-transform: rotate(50deg) translate(-25%, 15%);
-            transform: rotate(50deg) translate(-25%, 15%);
+    transform: rotate(50deg) translate(-25%, 15%);
+  }
+  .home-selection .grow .img {
+    height: 700px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    -webkit-transform: rotate(0deg) translate(-20%, -5%);
+    transform: rotate(0deg) translate(-20%, -5%);
+  }
+  .home-selection .grow .pname {
+    font-size: 3rem;
+    transform: translateY(-70%);
+  }
+  .home-selection.shrink {
+    min-height: 50%;
+    -webkit-transition: all 700ms ease-in;
+    transition: all 700ms ease-in;
+  }
+  .home-selection .productDescriptionButton.center {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    left: 43%;
+  }
+  .home-selection.shrink .img {
+    height: 550px;
+    -webkit-transition: all 700ms ease-in;
+    transition: all 700ms ease-in;
+    -webkit-transform: rotate(0deg) translate(-20%, 10%);
+    transform: rotate(0deg) translate(-20%, 10%);
+  }
 
-}
-.home-selection .grow .img {
-  height: 700px;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  -webkit-transform: rotate(0deg) translate(-20%, -5%);
-  transform: rotate(0deg) translate(-20%, -5%);
-
-}
-.home-selection .grow .pname {
-  font-size: 3rem;
-  transform: translateY(-70%);
-
-}
-.home-selection.shrink {
-  min-height: 50%;
-  -webkit-transition: all 700ms ease-in;
-  transition: all 700ms ease-in;
-}
-.home-selection .productDescriptionButton.center {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  left: 43%;
-
-}
-.home-selection.shrink .img {
-          height: 550px;
-          -webkit-transition: all 700ms ease-in;
-          transition: all 700ms ease-in;
-          -webkit-transform: rotate(0deg) translate(-20%, 10%);
-          transform: rotate(0deg) translate(-20%, 10%);
-        }
-        
-.home-selection.shrink .pname {
-  -webkit-transform: translateX(-15%);
-          transform: translateX(-15%);
-}
-
+  .home-selection.shrink .pname {
+    -webkit-transform: translateX(-15%);
+    transform: translateX(-15%);
+  }
 
   .home-selection .productDescriptionButton.move {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-
+    transform: translateY(-30px);
   }
 }
 @media only screen and (max-width: 800px) {
   .home-selection.shrink .img {
     -webkit-transform: translate(-25%, 50px);
-            transform: translate(-25%, 50px);
-            height: 300px;
-           
-          }
-          .home-selection .productDescriptionButton.center {
-            -webkit-transform: translateY(-5px);
-                    transform: translateY(-5px);
-            left: 42%;
-          
-          }
-          .home-selection.shrink {
-            min-height: 40%;
-            -webkit-transition: all 700ms ease-in;
-            transition: all 700ms ease-in;
-          }
-          .home-selection.shrink .pname {
-                    margin-top: 10rem;
-          }
-          .home-selection .grow .img {
-            height:600px;
-          
-            -webkit-transform: rotate(0deg) translate(-30%, 5%);
-            transform: rotate(0deg) translate(-30%, 5%);
-          
-          }
-          .home-selection.shrink .img {
-            height: 400px;
-            -webkit-transition: all 700ms ease-in;
-            transition: all 700ms ease-in;
-            -webkit-transform: rotate(0deg) translate(-20%,  10%);
-            transform: rotate(0deg) translate(-20%, 10%);
-          }
-          
-          .home-selection .grow .pname {
-            font-size: 3rem;
-            transform: translateY(-70%);
-          
-          }   
-          .home-selection .grow .pname div {
-            font-size: 1.5rem;
-          } 
-}
-@media only screen and (max-width: 500px) {
+    transform: translate(-25%, 50px);
+    height: 300px;
+  }
   .home-selection .productDescriptionButton.center {
     -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-    left: 35%;
-  
+    transform: translateY(-5px);
+    left: 42%;
+  }
+  .home-selection.shrink {
+    min-height: 40%;
+    -webkit-transition: all 700ms ease-in;
+    transition: all 700ms ease-in;
+  }
+  .home-selection.shrink .pname {
+    margin-top: 10rem;
   }
   .home-selection .grow .img {
-    height:550px;
-  
+    height: 600px;
+
     -webkit-transform: rotate(0deg) translate(-30%, 5%);
     transform: rotate(0deg) translate(-30%, 5%);
-  
   }
   .home-selection.shrink .img {
     height: 400px;
     -webkit-transition: all 700ms ease-in;
     transition: all 700ms ease-in;
-    -webkit-transform: rotate(0deg) translate(-20%,  20%);
-    transform: rotate(0deg) translate(-20%, 20%);
+    -webkit-transform: rotate(0deg) translate(-28%, 25%);
+    transform: rotate(0deg) translate(-28%, 25%);
   }
-  
+
+  .home-selection .grow .pname {
+    font-size: 3rem;
+    transform: translateY(-70%);
+  }
+  .home-selection .grow .pname div {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .home-selection .productDescriptionButton.center {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    left: 35%;
+  }
+  .home-selection .grow .img {
+    height: 600px;
+
+    -webkit-transform: rotate(0deg) translate(-30%, 10%);
+    transform: rotate(0deg) translate(-30%, 10%);
+  }
+  .home-selection.shrink .img {
+    height: 400px;
+    -webkit-transition: all 700ms ease-in;
+    transition: all 700ms ease-in;
+    -webkit-transform: rotate(0deg) translate(-28%, 25%);
+    transform: rotate(0deg) translate(-28%, 25%);
+  }
 }
 /*# sourceMappingURL=homeSelection.css.map */

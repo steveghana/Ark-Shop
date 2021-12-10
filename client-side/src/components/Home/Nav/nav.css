@@ -7,8 +7,8 @@ nav {
   width: 100%;
   color: black;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   z-index: 2;
   pointer-events: all;
 }
@@ -20,11 +20,14 @@ nav,
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   color: #f7f7f7;
 }
-
+nav .gender a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
 nav .gender,
 .gender .gender {
   gap: 2rem;
@@ -39,11 +42,11 @@ nav .gender .men-toggle,
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -61,11 +64,36 @@ nav .gender .men-toggle .toggle2,
 
 nav .arch,
 .gender .arch {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
   font-weight: 600;
-  margin: auto auto 0rem;
+  margin: 0 auto 0 auto;
+  font-family: "Century Gothic";
+  transform: translateX(10vw);
 }
-
+.userinfo {
+  position: relative;
+  margin-left: 2rem;
+}
+.avatar_drop {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.dialogbox {
+  position: absolute;
+  color: rgb(77, 76, 76);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5rem;
+}
 nav .contact-bagnum,
 .gender .contact-bagnum {
   display: -webkit-box;
@@ -73,11 +101,11 @@ nav .contact-bagnum,
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 0.75rem;
   gap: 2rem;
 }
@@ -104,21 +132,20 @@ nav .contact-bagnum .bag span,
 .gender .contact-bagnum .bag span {
   margin-left: 0.2rem;
 }
-nav .contact-bagnum .bagnum{
-  padding: .50rem .60rem;
+nav .contact-bagnum .bagnum {
+  padding: 0.5rem 0.6rem;
   border-radius: 50%;
   background-color: red;
 }
-nav .contact-bagnum .bag{
+nav .contact-bagnum .bag {
   text-decoration: none;
 }
-@media only screen and (max-width: 800px){
- 
+@media only screen and (max-width: 800px) {
   .gender {
     display: none;
-  } 
-  .contact{
+  }
+  .contact {
     display: none;
-  } 
+  }
 }
 /*# sourceMappingURL=nav.css.map */

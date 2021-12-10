@@ -1,0 +1,20 @@
+.placeOrder_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.info_wrapper {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.shipping_info :first-child,
+.payment_method :first-child,
+.order_items :first-child {
+  font-size: 2rem;
+  font-family: "Century Gothic", sans-serif;
+}
+.ordercalcs_wrapper {
+  max-width: 40%;
+}

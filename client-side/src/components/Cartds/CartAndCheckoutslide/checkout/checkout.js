@@ -1,53 +1,63 @@
-import React from "react";
-import "./checkout.css"
+import React, { useState, useContext } from "react";
+import { useDispatch } from "react-redux";
+import { UserCartcontext } from "../cartcontext";
+import { shippingMethod } from "../../../../Redux/actions/actions";
+import {
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Button,
+} from "@material-ui/core";
+import "./checkout.css";
 function Checkout() {
+  const dispatch = useDispatch();
+  const { counter, setcounter } = useContext(UserCartcontext);
+  const [paymentMethod, setpaymentMethod] = useState("Paypal");
+  const handleChange = (e) => setpaymentMethod(e.target.value);
+  const handlepaymentsubmit = () => {
+    dispatch(shippingMethod(paymentMethod));
+    setcounter(counter + 1);
+  };
   return (
     <div className="checkout-box">
       <div className="checkout-container">
-        <div className="cardnumber-head">Card Number</div>
+        <div className="cardnumber-head">Select a payment method</div>
         <div className="number-container">
-          <div className="number-box">
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-          </div>
-          <div className="number-box">
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-          </div>
-          <div className="number-box">
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-          </div>
-          <div className="number-box">
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-            <div>0</div>
-          </div>
+          <FormControl>
+            <FormLabel component="legend"> Payment </FormLabel>
+            <RadioGroup
+              row
+              aria-label="Payment"
+              name="Payment"
+              onChange={handleChange}
+            >
+              <FormControlLabel
+                checked={true}
+                value="Paypal"
+                control={<Radio color="secondary" />}
+                label="Paypal"
+              />
+              <FormControlLabel
+                value="Stripe"
+                control={<Radio color="secondary" />}
+                label="Stripe"
+              />
+            </RadioGroup>
+          </FormControl>
         </div>
-<div className="expirydate-cvv">
 
-        <div className="expirydate">
-          <div>Expire date</div>
-          <div className="rounded">MM/YY</div>
+        <div className="money-vendors-container">
+          <Button
+            onClick={handlepaymentsubmit}
+            variant="contained"
+            color="secondary"
+            fullWidth
+          >
+            Continue
+          </Button>
         </div>
-        <div className="cvv">
-          <div>CVV</div>
-          <div className="rounded">000</div>
-        </div>
-      </div>
-      </div>
-
-      <div className="money-vendors-container">
-          <div className="vendor">Amazon Express</div>
-          <div className="vendor">MasterCard</div>
-          <div className="vendor">Visa</div>
       </div>
     </div>
   );
