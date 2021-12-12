@@ -8,3 +8,4 @@ export const DELETE = "DELETE ITEMS";
 export const SHIPPING = "SHIPPING";
 export const SHIPPINGMETHOD = "SHIPPINGMETHOD";
 export const ORDERPLACEMENT = "ORDERPLACEMENT";
+export const PLACEORDER = "PLACEORDER";

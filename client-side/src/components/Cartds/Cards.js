@@ -38,6 +38,7 @@ function Cards() {
         />
         <Total
           price={price}
+          counter={counter}
           done={done}
           setitemSum={setitemSum}
           cartComplete={cartComplete}

@@ -23,11 +23,7 @@ export const customslider = () => {
   slidecontainer.style.transition = "none";
   slidecontainer.style.transform = `translateX(${-movex}px)`;
   let count = 1;
-  // Array.from(allSlides).forEach((img) => {
-  //   let image = img.querySelector("img");
-  //   increase(image, "false");
-  // });
-  // let slideimg = allSlides[count].querySelector("img");
+
   slidecontainer.style.transition = "transform 400ms ease";
   arrowRight.addEventListener("click", () => {
     count++;

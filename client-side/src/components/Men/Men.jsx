@@ -21,13 +21,10 @@ function Men() {
     useEffect(() => {
         (async () => {
             const { data } = await axios.get(`${EndPoint}/all`)
-            console.log(data)
             setproducts(data)
-
         })();
         if (!isMobile) {
             products.length && customslider()
-
         }
 
     }, [products.length, isMobile])

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getProductinfo, getallproducts } from "./Redux/actions/actions";
 import Home from "./components/Home/home";
+import Placeorder from "./components/Cartds/CartAndCheckoutslide/PlaceOrder/placeorder";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cards from "./components/Cartds/Cards";
 import Men from "./components/Men/Men";
@@ -80,13 +81,18 @@ function App() {
             <Home />
           </Route>
           <Switch>
-            <Route path="/cart">
+            <Route path="/cart" exact>
               <Cards />
             </Route>
           </Switch>
           <Switch>
-            <Route path="/men">
+            <Route path="/men" exact>
               <Men />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/order/:id">
+              <Placeorder />
             </Route>
           </Switch>
         </Router>

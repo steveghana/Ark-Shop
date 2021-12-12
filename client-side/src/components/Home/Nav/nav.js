@@ -26,7 +26,7 @@ function Nav({ morebutton, black }) {
     setincrement,
   } = useContext(UIcontext);
   const { color } = state;
-  const [showuserbox, setshowuserbox] = useState(false)
+  const [showuserbox, setshowuserbox] = useState(false);
   const [user, setuser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -36,7 +36,7 @@ function Nav({ morebutton, black }) {
     setuser(null);
     dispatch(logout());
   };
-  const showDialog = () => setshowuserbox(prevValue => !prevValue)
+  const showDialog = () => setshowuserbox((prevValue) => !prevValue);
   return (
     <nav className="main-nav">
       {isMobile && <Menu />}
@@ -67,27 +67,30 @@ function Nav({ morebutton, black }) {
       >
         <Toolbar className={classes.Toolbar}>
           {user && (
-            <div className='userinfo'>
+            <div className="userinfo">
               <div onClick={showDialog} className="avatar_drop">
                 <Avatar
                   className={classes.avatar}
-                  alt={user.existinguser.firstName}
-                // src={}
+                  alt={user.result.firstName}
+                  // src={}
                 ></Avatar>
                 <ArrowDropDown />
               </div>
-              {
-                showuserbox ? (
-                  <div className="dialogbox">
-                    <Typography>{`${user?.existinguser?.firstName} ${user?.existinguser?.secondName}`}</Typography>
-                    <Button component={Link} to="/" variant="contained" color="primary" onClick={handlelogout}>
-                      Logout
-                    </Button>
-                  </div>
-                ) : null
-              }
+              {showuserbox ? (
+                <div className="dialogbox">
+                  <Typography>{`${user?.result?.firstName} ${user?.result?.secondName}`}</Typography>
+                  <Button
+                    component={Link}
+                    to="/"
+                    variant="contained"
+                    color="primary"
+                    onClick={handlelogout}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              ) : null}
             </div>
-
           )}
         </Toolbar>
         <p className="contact" style={{ display: isMobile && "none" }}>

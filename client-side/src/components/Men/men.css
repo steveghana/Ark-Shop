@@ -31,11 +31,16 @@
   justify-content: space-between;
 }
 .slide_footer .slide_description {
+  font-family: "Century Gothic", sans-serif;
   display: flex;
   width: 100%;
   padding-right: 2rem;
   justify-content: space-between;
   align-items: center;
+}
+.slide_description .price {
+  font-size: 2rem;
+  font-weight: bolder;
 }
 .slide_description .colors,
 .colors .bar_textcolor {
@@ -125,7 +130,6 @@
   height: 100%;
   left: auto;
   right: auto;
-  transition: width 500ms ease-in-out, bottom 500ms ease-in-out;
   bottom: 10%;
 }
 .arrow_right,
@@ -152,10 +156,6 @@
 .arrow_right {
   transition: 300ms ease-in-out;
 }
-/* .arrow_right:hover,
-.arrow_left:hover {
-  background-color: rgb(218, 218, 218);
-} */
 .arrow_right,
 .arrow_left {
   list-style-type: none;

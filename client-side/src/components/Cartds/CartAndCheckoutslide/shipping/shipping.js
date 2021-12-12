@@ -7,13 +7,17 @@ import "./shipping.css";
 function Shipping({ setshippinComplete }) {
   const dispatch = useDispatch();
   const { counter, setcounter } = useContext(UserCartcontext);
+  const existingShippingData = JSON.parse(
+    localStorage.getItem("usershippingInfo")
+  );
+
   const [shippinginfo, setshippinginfo] = useState({
-    fullname: "",
-    country: "",
-    City: "",
-    postal: "",
-    State: "",
-    Address: "",
+    fullname: existingShippingData?.fullname || "",
+    country: existingShippingData?.country || "",
+    City: existingShippingData?.City || "",
+    postal: existingShippingData?.postal || "",
+    State: existingShippingData?.State || "",
+    Address: existingShippingData?.Address || "",
   });
   const [err, seterr] = useState("");
   const handlechange = (e) => {

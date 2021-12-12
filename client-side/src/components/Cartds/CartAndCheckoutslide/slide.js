@@ -34,7 +34,7 @@ function Slide({
   }, [counter, width, setcounter]);
 
   return (
-    <div className="slide-container">
+    <div className="cart_slide-container">
       <div className="individual-slide" ref={slider}>
         <div
           className="slide1"
@@ -63,9 +63,7 @@ function Slide({
         <div className="slide4" style={{ display: counter > 3 && "none" }}>
           <Order />
         </div>
-        <div className="slide5">
-          <Done setdone={setdone} />
-        </div>
+        <div className="slide5">{/* <Done setdone={setdone} /> */}</div>
       </div>
     </div>
   );

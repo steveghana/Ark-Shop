@@ -34,7 +34,6 @@ function Checkout() {
               onChange={handleChange}
             >
               <FormControlLabel
-                checked={true}
                 value="Paypal"
                 control={<Radio color="secondary" />}
                 label="Paypal"

@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useContext } from "react";
 import Nav from "../Nav/nav";
 import Productinfo from "../productinfo/productinfo";
 import "./homeSelection.css";
+import Spinner from '../../spinner/Spinner'
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
 import {
@@ -55,7 +56,7 @@ function Homepage() {
   return (
     <>
       {!productInfo.length ? (
-        <CircularProgress className="page-loader" />
+        <Spinner className="page-loader" />
       ) : (
         <>
           <div

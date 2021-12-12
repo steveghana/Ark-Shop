@@ -160,6 +160,7 @@
   transition: all 1s ease-in;
   opacity: 0;
   overflow: hidden;
+  /* color: #9b857d; */
 }
 
 .home-selection .select1 .product-name1::before,

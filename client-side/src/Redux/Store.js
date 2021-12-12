@@ -5,6 +5,7 @@ import { Allproductsreducer } from "./reducer/allproducts";
 import { shippingMethod } from "./reducer/paymentinfo";
 import { ShippingInformation } from "./reducer/shippingInfo";
 import { orderPlacement } from "./reducer/orderPlacement";
+import { placedOrder } from "./reducer/placeOrder";
 import thunk from "redux-thunk";
 import { compose, createStore, applyMiddleware, combineReducers } from "redux";
 const reducers = combineReducers({
@@ -14,16 +15,28 @@ const reducers = combineReducers({
   user: userReducer,
   shipping: ShippingInformation,
   shippingMethod,
-  PlacedOrder: orderPlacement,
+  orderPlacement,
+  Orderplaced: placedOrder,
 });
 
 // const cartItemsInlocalStorage= localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-// const INITIAL_STATE = {
-//     cart :{
-// cartItems : cartItemsInlocalStorage
-//         }
-// }
+const INITIAL_STATE = {
+  user: {
+    authData: localStorage.getItem("profile")
+      ? JSON.parse(localStorage.getItem("profile"))
+      : null,
+  },
+  cart: {
+    cartItems: localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [],
+  },
+};
 const middleware = [thunk];
-const Store = createStore(reducers, compose(applyMiddleware(...middleware)));
+const Store = createStore(
+  reducers,
+  INITIAL_STATE,
+  compose(applyMiddleware(...middleware))
+);
 
 export default Store;

@@ -19,16 +19,26 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
           ),
         };
       } else {
+        localStorage.removeItem("cart");
+        localStorage.setItem("cart", JSON.stringify(product));
         return {
           ...state,
           cartItems: [...state.cartItems, product],
         };
       }
     case DELETE:
+      let inlocalstorage = JSON.parse(localStorage.getItem("cart"));
+      let filteredItem = inlocalstorage.filter(
+        (item) => item.id !== action.payload
+      );
+      localStorage.removeItem("cart");
+      localStorage.setItem("cart", JSON.stringify(filteredItem));
+
       return {
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
       };
     case DELETECART:
+      localStorage.removeItem("cart");
       return {
         cartItems: [],
       };

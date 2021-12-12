@@ -7,7 +7,6 @@ export const userReducer = (
 ) => {
   switch (action.type) {
     case AUTH:
-      console.log(action.payload, "reducer");
       localStorage.setItem("profile", JSON.stringify({ ...action.payload }));
       // localStorage.clear()
       return { ...state, authData: action?.payload };

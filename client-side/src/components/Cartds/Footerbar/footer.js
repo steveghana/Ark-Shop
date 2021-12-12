@@ -25,7 +25,7 @@ function Footer({ setcounter, counter, cartempty, setcartComplete }) {
   };
 
   return (
-    counter !== 3 && (
+    counter !== 4 && (
       <div className="footer-bar">
         <Link to="/home" style={{ textDecoration: "none" }}>
           {" "}
