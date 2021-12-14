@@ -1,19 +1,38 @@
-import React from 'react'
-import { Container,Avatar, Grid, Typography, TextField, Paper, InputAdornment, IconButton } from '@material-ui/core'
-import { Visibility, VisibilityOff } from '@material-ui/icons'
+import React from "react";
+import {
+  Container,
+  Avatar,
+  Grid,
+  Typography,
+  TextField,
+  Paper,
+  InputAdornment,
+  IconButton,
+} from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 
-function Input({half, name, placeholder, label, autoFocus, type, handleChange, handlePassword}) {
-    return (
-        <Grid xs={12} md={half ? 6 : 12} item>
-          <TextField label={label} 
-          name={name} 
-          placeholder={placeholder} 
-          variant="outlined" 
-          fullWidth 
-          required
-          autoFocus={autoFocus}
-          type={type}
-          onChange={handleChange}
+function Input({
+  half,
+  name,
+  placeholder,
+  label,
+  autoFocus,
+  type,
+  handleChange,
+  handlePassword,
+}) {
+  return (
+    <Grid xs={12} md={half ? 6 : 12} item>
+      <TextField
+        label={label}
+        name={name}
+        placeholder={placeholder}
+        variant="outlined"
+        fullWidth
+        required
+        autoFocus={autoFocus}
+        type={type}
+        onChange={handleChange}
         //   inputProps={name === "password" && {
         //     endadornment:(
         //           <InputAdornment position ="end" >
@@ -25,10 +44,9 @@ function Input({half, name, placeholder, label, autoFocus, type, handleChange, h
         //       )
         //   }
         // }
-          />
-
-        </Grid>
-    )
+      />
+    </Grid>
+  );
 }
 
-export default Input
+export default Input;

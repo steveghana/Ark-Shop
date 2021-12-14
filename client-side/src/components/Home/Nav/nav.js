@@ -38,17 +38,23 @@ function Nav({ morebutton, black }) {
   };
   const showDialog = () => setshowuserbox((prevValue) => !prevValue);
   return (
-    <nav className="main-nav">
-      {isMobile && <Menu />}
+    <nav style={{ position: isMobile ? "fixed" : null }} className="main-nav">
       <div
         className="gender"
-        style={{ color: productinformation ? color : black }}
+        style={{
+          color: productinformation ? color : black,
+        }}
       >
         <Link
-          style={{ color: black ? "black" : "white", textDecoration: "none" }}
-          to={`${black ? "/" : "/men"}`}
+          style={{ textDecoration: "none" }}
+          to={`${black ? "/home" : "/men"}`}
         >
-          <div className="men-toggle">
+          <div
+            style={{
+              color: productinformation ? color : black,
+            }}
+            className="men-toggle"
+          >
             <div className="toggle2">.</div>
             <div className="men">{black ? "Home" : "Shop"}</div>
           </div>
@@ -57,7 +63,9 @@ function Nav({ morebutton, black }) {
 
       <div
         className="arch"
-        style={{ color: productinformation ? color : black }}
+        style={{
+          color: productinformation ? color : black,
+        }}
       >
         arch
       </div>
@@ -69,21 +77,15 @@ function Nav({ morebutton, black }) {
           {user && (
             <div className="userinfo">
               <div onClick={showDialog} className="avatar_drop">
-                <Avatar
-                  className={classes.avatar}
-                  alt={user.result.firstName}
-                  // src={}
-                ></Avatar>
+                <Typography>{`${user?.result?.firstName}`}</Typography>
                 <ArrowDropDown />
               </div>
               {showuserbox ? (
                 <div className="dialogbox">
-                  <Typography>{`${user?.result?.firstName} ${user?.result?.secondName}`}</Typography>
                   <Button
                     component={Link}
                     to="/"
-                    variant="contained"
-                    color="primary"
+                    variant="outlined"
                     onClick={handlelogout}
                   >
                     Logout
@@ -93,23 +95,29 @@ function Nav({ morebutton, black }) {
             </div>
           )}
         </Toolbar>
-        <p className="contact" style={{ display: isMobile && "none" }}>
-          CONTACT
-        </p>
-        <Link style={{ color: "white", textDecoration: "none" }} to="/cart">
+        <Link
+          style={{
+            color: "white",
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem",
+          }}
+          to="/cart"
+        >
           <p
             className="bag"
             style={{ color: productinformation ? color : black }}
           >
             BAG
           </p>
+          <span
+            style={{ color: "white" }}
+            className={data.length > 0 ? "bagnum" : null}
+          >
+            {data.length}
+          </span>
         </Link>
-        <span
-          style={{ color: "white" }}
-          className={data.length > 0 ? "bagnum" : null}
-        >
-          {data.length}
-        </span>
         {!black ? (
           <div
             className={deletebtn ? "toggle-delete toggle" : "toggle-delete"}

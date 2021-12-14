@@ -141,9 +141,6 @@ nav .contact-bagnum .bag {
   text-decoration: none;
 }
 @media only screen and (max-width: 800px) {
-  .gender {
-    display: none;
-  }
   .contact {
     display: none;
   }

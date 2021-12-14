@@ -70,7 +70,7 @@ export const signupUser = async (req, res) => {
     const { firstName, secondName, email, password } = req.body;
     const existinguser = await userSchema.findOne({ firstName });
     if (existinguser) {
-      res.json({ err: "user already exist" });
+      res.json({ err: "User already exist" });
     }
     const hashedPassword = await bcrypt.hash(password, 12);
     const newuser = await userSchema.create({
@@ -95,10 +95,11 @@ export const signupUser = async (req, res) => {
 };
 export const siginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { signInemail: email, password } = req.body;
+
     const existinguser = await userSchema.findOne({ email });
     if (!existinguser) {
-      res.json({ err: "user doesn't exist try signing up" });
+      res.json({ err: "User doesn't exist try signing up" });
     }
     const isPassword = await bcrypt.compare(password, existinguser.password);
     if (!isPassword) {

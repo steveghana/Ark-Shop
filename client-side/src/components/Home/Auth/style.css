@@ -1,0 +1,78 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: burlywood; */
+}
+.Paper {
+  align-self: center;
+  /* background-color: #9c8c85; */
+  color: white;
+  /* transform: translateY(20vh); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100%; */
+  justify-content: center;
+  margin: auto;
+}
+.patterns {
+  min-width: 40%;
+  height: auto;
+  margin-top: auto;
+}
+
+.svg_wrapper-intro .svg_text {
+  font-family: "Century Gothic";
+  font-size: 6rem;
+  font-weight: 500;
+  margin-right: auto;
+  color: transparent;
+  opacity: 1;
+  stroke-width: 2;
+  -webkit-animation: textAnimate 3s infinite alternate;
+  animation: textAnimate 3s infinite alternate;
+}
+
+@-webkit-keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+  }
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: rgba(254, 255, 255, 0);
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: rgba(255, 255, 255, 0);
+  }
+}
+
+.intro_header {
+  font-size: 6rem;
+  margin-top: auto;
+  color: transparent;
+  font-family: "Century Gothic";
+  -webkit-text-stroke: 3px tomato;
+}
+.Avatar {
+  margin: 1rem;
+  background-color: red;
+}
+
+form {
+  width: "100%";
+  color: white;
+}

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext } from "react";
 import Nav from "../Nav/nav";
 import Productinfo from "../productinfo/productinfo";
 import "./homeSelection.css";
-import Spinner from '../../spinner/Spinner'
+import Spinner from "../../spinner/Spinner";
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
 import {
@@ -97,7 +97,7 @@ function Homepage() {
 
             {productInfo.map((product, index) => (
               <div
-                key={product._id}
+                key={index}
                 className={`select select${index + 1}`}
                 ref={renderingRefs(index)}
                 onClick={(e) => {

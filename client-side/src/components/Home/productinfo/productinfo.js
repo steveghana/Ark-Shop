@@ -47,30 +47,31 @@ function Productinfo() {
   const counter = useRef("");
 
   const handlecart = (item, qty) => {
-    dispatch(addtoCart(item, qty));
+    dispatch(addtoCart(item, qty, size));
   };
 
   const handleimages = (item, e) => {
     setimageindex(item);
     e.target.style.border = `2px solid ${color}`;
   };
-
   const removeborderAfterClick = () => {
     let images = document.querySelectorAll(".small-imgs");
     images.forEach((image) => (image.style.border = "none"));
   };
+
   const handleCounter = () => {
     const target = Number(counter.current.getAttribute("data-target"));
-    const speed = 25;
     let numinContent = Number(counter.current.innerText);
-    const increment = target / speed;
+    const increment = 1;
     if (numinContent < target) {
       counter.current.innerText = numinContent + increment;
-      setTimeout(handleCounter, 50);
+      setTimeout(handleCounter, 10);
     } else {
       counter.current.innerText = target.toFixed(2);
     }
   };
+
+  ////
   useEffect(() => {
     increment && handleCounter();
   }, [increment]);
@@ -86,7 +87,6 @@ function Productinfo() {
         description={description}
         header={header}
       />
-
       <div
         className={
           productinformation ? "price-and-about stretch" : "price-and-about"
@@ -114,7 +114,6 @@ function Productinfo() {
               </>
             ))}
         </div>
-
         <div className="product-description">
           <div
             className="price-and-currency"
@@ -123,7 +122,6 @@ function Productinfo() {
               color: index === 2 ? background : null,
             }}
           >
-            {" "}
             $
             <span className="price" data-target={price} ref={counter}>
               {!increment && "0"}
@@ -142,7 +140,7 @@ function Productinfo() {
                 <InputLabel>Size</InputLabel>
                 <Select value={size} onChange={(e) => setsize(e.target.value)}>
                   {sizes.length &&
-                    sizes.map((size, i) => (
+                    sizes?.map((size, i) => (
                       <MenuItem value={size} key={i}>
                         {size}
                       </MenuItem>
@@ -179,7 +177,6 @@ function Productinfo() {
             >
               Quick Order
             </div>
-
             <div
               className="about-mobile"
               onClick={() => setmobileinfo(true)}
@@ -190,7 +187,6 @@ function Productinfo() {
             >
               About Product
             </div>
-
             <div
               className="about"
               style={{

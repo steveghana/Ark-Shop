@@ -77,9 +77,9 @@ function Order() {
                 </div>
                 <div className="order_items">
                     {
-                        cartItems?.map(item => (
+                        cartItems?.map((item, i) => (
 
-                            <div className="order_items_cart" key={item.id}>
+                            <div className="order_items_cart" key={i}>
                                 <div className="order_items_cart-item">
                                     <div className="img">
                                         <img src={item.image} alt="order_items_cart-img" />
@@ -90,10 +90,8 @@ function Order() {
                                             <span className="order_items_cart-sub">{item.sub}</span>
                                         </div>
                                         <span className="order_items_cart-size">
-                                            size:{" "}
-                                            {item?.sizes.map((item) => (
-                                                <div className="order_items_cart-sizes">{item}</div>
-                                            ))}
+                                            size:
+                                            <div className="order_items_cart-sizes">{item?.sizes}</div>
                                         </span>
 
                                         <div className="colordescription">{item.productColor}</div>

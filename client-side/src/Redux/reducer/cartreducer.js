@@ -19,8 +19,6 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
           ),
         };
       } else {
-        localStorage.removeItem("cart");
-        localStorage.setItem("cart", JSON.stringify(product));
         return {
           ...state,
           cartItems: [...state.cartItems, product],

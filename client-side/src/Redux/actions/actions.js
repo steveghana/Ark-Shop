@@ -33,27 +33,26 @@ export const getallproducts = () => async (dispatch) => {
   const { data } = await api.getAllProducts();
   dispatch({ type: FETCHALL, payload: data });
 };
-export const addtoCart = (id, qty) => async (dispatch, getState) => {
+export const addtoCart = (id, qty, sz) => async (dispatch, getState) => {
   try {
     const { data } = await api.getProductsById(id);
     dispatch({
       type: CART,
-      payload: [
-        {
-          name: data.name,
-          sub: data.sub,
-          color: data.color,
-          image: data.image,
-          productColor: data.ProductColor,
-          countinstock: data.countInStock,
-          price: data.price,
-          sizes: data.sizes,
-          id,
-          qty,
-        },
-      ],
+      payload: {
+        name: data.name,
+        sub: data.sub,
+        color: data.color,
+        image: data.image,
+        productColor: data.ProductColor,
+        countinstock: data.countInStock,
+        price: data.price,
+        sizes: sz || 5,
+        id,
+        qty,
+      },
     });
-    //   localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
+    localStorage.removeItem("cart");
+    localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
   } catch (error) {
     console.log(error);
   }
@@ -78,12 +77,13 @@ export const shoppingdataAddToCart =
           qty,
         },
       });
-      localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+      // localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
     } catch (error) {
       console.log(error);
     }
   };
 export const orderPlacement = (item) => async (dispatch, getState) => {
+  console.log(item);
   dispatch({ type: ORDER_CREATE_REQUEST, payload: item });
   try {
     const { data } = await api.placeOrder(item);

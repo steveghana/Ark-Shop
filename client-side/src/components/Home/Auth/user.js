@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { LockOutlined } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
-import useStyles from "./style";
+import "./style.css";
 import GoogleLogin from "react-google-login";
 import Input from "./input";
 import { useSelector } from "react-redux";
@@ -29,17 +29,19 @@ function Auth() {
     firstName: "",
     secondName: "",
     email: "",
+    signInemail: "",
     password: "",
     confirmpassword: "",
   };
   const [user, setuser] = useState(initialState);
-  const classes = useStyles();
   const signupAuthConfig = (err) => {};
   const handleSubmit = (e) => {
+    console.log(user);
+
     e.preventDefault();
 
+    const emailValidity = new RegExp(/^[\w*.-_+]+@[\w-]+(\.\w{2,4})+$/);
     if (isSignedup) {
-      const emailValidity = new RegExp(/^[\w*\.-_\+]+@[\w-]+(\.\w{2,4})+$/);
       if (user.firstName === "") {
         seterrorhandle("Enter your firtname");
       } else if (user.password.length === 0 || user.password.length > 10) {
@@ -54,16 +56,16 @@ function Auth() {
         dispatch(signupAuth(user, history, seterrorhandle));
       }
     } else {
-      if (user.email === "") {
+      if (user.signupemail === "" || !emailValidity.test(user.signInemail)) {
         seterrorhandle("Enter valid email for example johndoe@ecme.com");
       } else if (user.password.length === 0 || user.password.length > 10) {
         seterrorhandle("Enter a vaild password");
       } else {
         dispatch(signinAth(user, history, seterrorhandle));
+        if (errorhandle?.err) return;
+        setuser(initialState);
       }
     }
-    console.log(user);
-    setuser(initialState);
   };
   const handleChange = (e) => {
     setuser({ ...user, [e.target.name]: e.target.value });
@@ -84,13 +86,26 @@ function Auth() {
     console.log(data);
   }, [data]);
   return (
-    <Container component="main" maxWidth="xs">
+    <Container className="container" component="main" maxWidth="xs">
+      <div className="patterns">
+        <svg className="svg_wrapper-intro" width="100%" height="100%">
+          <text
+            className="svg_text"
+            stroke="tomato"
+            x="50%"
+            y="60%"
+            textAnchor="middle"
+          >
+            ARK
+          </text>
+        </svg>
+      </div>
       <Paper
-        className={classes.Paper}
+        className="Paper"
         elevation={3}
         style={{ marginTop: "2rem", padding: "2rem" }}
       >
-        <Avatar className={classes.Avatar}>
+        <Avatar className="Avatar">
           <LockOutlined />
         </Avatar>
         <Typography variant="h5">
@@ -100,7 +115,7 @@ function Auth() {
           autoComplete="off"
           noValidate
           onSubmit={handleSubmit}
-          className={classes.form}
+          className="form"
         >
           <Grid container spacing={2} style={{ marginTop: "1rem" }}>
             {isSignedup && (
@@ -132,7 +147,7 @@ function Auth() {
             {!isSignedup && (
               <Input
                 label="Email"
-                name="email"
+                name="signInemail"
                 type="email"
                 placeholder="Email"
                 handleChange={handleChange}
@@ -174,7 +189,7 @@ function Auth() {
               clientId="Google id"
               render={(renderprops) => (
                 <Button
-                  className={classes.googleButton}
+                  className="googleButton"
                   fullWidth
                   color="primary"
                   variant="contained"

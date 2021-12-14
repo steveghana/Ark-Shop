@@ -13,7 +13,7 @@ function Total({ counter, cartComplete, setitemSum }) {
   return (
     <div
       style={{ display: counter === 3 || counter === 4 ? "none" : null }}
-      //   className="total"
+      className="total"
     >
       $ <span ref={total}>{getCartTotal()}</span>
     </div>

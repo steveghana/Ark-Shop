@@ -138,8 +138,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: transform 800ms ease-in-out, height 200ms ease-out,
+    min-width 900ms ease-out;
+  transition: transform 800ms ease-in-out, height 200ms ease-out,
+    min-width 900ms ease-out;
   min-width: 50%;
   height: 100%;
   overflow: hidden;

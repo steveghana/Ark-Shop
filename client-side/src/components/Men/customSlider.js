@@ -1,70 +1,69 @@
-export const customslider = () => {
-  let slidecontainer = document.querySelector(".slide_slide");
-  let allcurrentSlides = document.querySelectorAll(".slider_slides");
+export const customslider = (container) => {
+  let slidecontainer = container.current;
+  let allcurrentSlides = slidecontainer.querySelectorAll(".slider_slides");
   let arrowLeft = document.querySelector(".arrow_left");
   let arrowRight = document.querySelector(".arrow_right");
-  let numOfSlides = allcurrentSlides.length;
-  let slideWidth = allcurrentSlides[0].getBoundingClientRect().width;
+  let slideWidth = allcurrentSlides[0].offsetWidth;
   let movex = slideWidth;
   //clone
   //cheack if the clone exists to avoid duplicates
-  const previousfirstclone = slidecontainer.querySelector("#firstclone");
-  const previousSecondclone = slidecontainer.querySelector("#lastclone");
-  if (!previousfirstclone && !previousSecondclone) {
-    const firstclone = allcurrentSlides[0].cloneNode(true);
-    const lastClone = allcurrentSlides[numOfSlides - 1].cloneNode(true);
-    firstclone.setAttribute("id", "firstclone");
-    lastClone.setAttribute("id", "lastclone");
-    slidecontainer.appendChild(firstclone);
-    slidecontainer.prepend(lastClone);
-  }
+  // const previousfirstclone = slidecontainer.querySelector("#firstclone");
+  // const previousSecondclone = slidecontainer.querySelector("#lastclone");
+  // if (!previousfirstclone && !previousSecondclone) {
+  //   const firstclone = allcurrentSlides[0].cloneNode(true);
+  //   const lastClone = allcurrentSlides[numOfSlides - 1].cloneNode(true);
+  //   firstclone.setAttribute("id", "firstclone");
+  //   lastClone.setAttribute("id", "lastclone");
+  //   slidecontainer.appendChild(firstclone);
+  //   slidecontainer.prepend(lastClone);
+  // }
 
-  let allSlides = document.querySelectorAll(".slider_slides");
-  slidecontainer.style.transition = "none";
   slidecontainer.style.transform = `translateX(${-movex}px)`;
   let count = 1;
 
-  slidecontainer.style.transition = "transform 400ms ease";
   arrowRight.addEventListener("click", () => {
     count++;
-    Array.from(allSlides).forEach((img) => {
+    Array.from(allcurrentSlides).forEach((img) => {
       let image = img.querySelector("img");
       shrink(image);
+      // increase(image);
     });
-    let slideimg = allSlides[count].querySelector("img");
-    increase(slideimg);
-    slidecontainer.style.transition = "transform 100ms ease";
+    let image = allcurrentSlides[count].querySelector("img");
+    increase(image);
+    slidecontainer.style.transition = "transform 300ms ease";
     slidecontainer.style.transform = `translateX(${-(movex * count)}px)`;
-    if (count === allSlides.length) count = numOfSlides;
+    if (count >= allcurrentSlides.length) count = allcurrentSlides.length;
   });
   arrowLeft.addEventListener("click", () => {
     count--;
-    Array.from(allSlides).forEach((img) => {
+    Array.from(allcurrentSlides).forEach((img) => {
       let image = img.querySelector("img");
       shrink(image);
     });
-    let slideimg = allSlides[count].querySelector("img");
-    slidecontainer.style.transition = "transform 100ms ease";
-    increase(slideimg);
+
+    let image = allcurrentSlides[count].querySelector("img");
+    increase(image);
+
+    slidecontainer.style.transition = "transform 300ms ease";
     slidecontainer.style.transform = `translateX(${-(movex * count)}px)`;
 
     if (count < 0) count = 0;
   });
   slidecontainer.addEventListener("transitionend", () => {
-    if (allSlides[count].id === "firstclone") {
+    if (allcurrentSlides[count].id === "firstclone") {
       slidecontainer.style.transition = "none";
       count = 1;
-      Array.from(allSlides).forEach((img) => {
+      Array.from(allcurrentSlides).forEach((img) => {
         let image = img.querySelector("img");
         increase(image, "noting");
       });
 
       slidecontainer.style.transform = `translateX(${-(movex * count)}px)`;
     }
-    if (allSlides[count].id === "lastclone") {
+    if (allcurrentSlides[count].id === "lastclone") {
       slidecontainer.style.transition = "none";
-      count = numOfSlides;
-      Array.from(allSlides).forEach((img) => {
+      count = allcurrentSlides.length - 2;
+      Array.from(allcurrentSlides).forEach((img) => {
         let image = img.querySelector("img");
         increase(image, "noting");
       });
@@ -72,7 +71,12 @@ export const customslider = () => {
       slidecontainer.style.transform = `translateX(${-(movex * count)}px)`;
     }
   });
+
   window.addEventListener("resize", () => {
+    Array.from(allcurrentSlides).forEach((img) => {
+      let image = img.querySelector("img");
+      increase(image);
+    });
     slidecontainer.style.transition = "none";
     slideWidth = allcurrentSlides[0].offsetWidth;
     movex = slideWidth;
@@ -82,13 +86,11 @@ export const customslider = () => {
 
 const shrink = (item) => {
   // item.style.transition = "all 400ms ease";
-  item.style.opacity = "0";
-  item.style.opacity = "0";
-  item.style.opacity = "0";
+  item.style.transform = "scale(0.5,0.5)";
 };
 const increase = (item, showtrans) => {
-  if (!showtrans) item.style.transition = "all 700ms ease";
-  item.style.opacity = "1";
-  item.style.opacity = "1";
-  item.style.opacity = "1";
+  if (!showtrans) {
+    item.style.transition = "all 700ms ease";
+  }
+  item.style.transform = "scale(1,1)";
 };

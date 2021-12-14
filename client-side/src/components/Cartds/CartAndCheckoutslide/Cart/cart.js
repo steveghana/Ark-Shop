@@ -32,7 +32,7 @@ function Cart({ cart, setcartempty }) {
       {!data.length ? (
         <>
           {setcartempty(false)}
-          <div>
+          <div className="empty_cart">
             Your Cart is empty{" "}
             <Link to="/home" style={{ textDecoration: "none" }}>
               Back to Shop
@@ -40,10 +40,10 @@ function Cart({ cart, setcartempty }) {
           </div>
         </>
       ) : (
-        data.map((item) => (
+        data.map((item, i) => (
           <>
             {setcartempty(true)}
-            <div className="cart flex-row" key={item.id}>
+            <div className="cart flex-row" key={i}>
               <div className="cart-item">
                 <div className="img">
                   <img src={item.image} alt="cart-img" />
@@ -54,15 +54,12 @@ function Cart({ cart, setcartempty }) {
                     <span className="cart-sub">{item.sub}</span>
                   </h2>
                   <span className="cart-size">
-                    size:{" "}
-                    {item.sizes.map((item) => (
-                      <div className="cart-sizes">{item}</div>
-                    ))}
+                    size: <div className="cart-sizes">{item.sizes}</div>
                   </span>
 
                   <div className="colordescription">{item.productColor}</div>
                   <div className="color">
-                    color :{" "}
+                    color :
                     <span
                       className="item-colorDesc"
                       style={{ backgroundColor: item.color }}

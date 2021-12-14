@@ -4,11 +4,18 @@
 .cart {
   display: flex;
   flex-direction: column;
+  font-family: "Century Gothic", sans-serif;
   gap: 6rem;
   margin: 3rem 0rem;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
-
+.empty_cart {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.5rem;
+}
 .cart-item {
   display: flex;
   flex-direction: row;

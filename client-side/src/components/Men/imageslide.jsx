@@ -1,27 +1,65 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
+import { useMediaQuery } from '@material-ui/core'
 function Imageslide({ product, i, handlecart }) {
-    const { description, name, sub, color, ProductColor, pc1, pc2, _id: id } = product
+    const { description, name, sub, color, ProductColor, pc1, pc2, _id: id, relatedImages } = product
+    const [imageindex, setimageindex] = useState(0)
     const [qty, setqty] = React.useState(1);
-
+    const handleimages = (item, e) => {
+        setimageindex(item);
+        e.target.style.border = `2px solid ${color}`;
+    };
+    const removeborderAfterClick = () => {
+        [...document.querySelectorAll(".imgs")].forEach((image) => (image.style.border = "none"));
+    };
     let hexarray = [pc1, pc2]
+    const isTablet = useMediaQuery('(max-width:600px)')
     const colorsplit = ProductColor.split("/")
     return (
         <div key={i} className="slider_slides">
-            <img src={product?.image} alt="r2" />
+            <div className="slide_patterns_mobile">
+                <svg className='slide_svg_wrapper' width="100%" height="100%">
+                    <text className='slide_svg_text' stroke={color} x="50%" y="60%" textAnchor="middle">
+                        {`${name} ${sub}`}
+                    </text>
+                </svg>
+            </div>
+            <img className="image" src={relatedImages[imageindex]} alt="r2" />
             <div className="product_text">
                 <p>{description}</p>
             </div>
             <div className="slide_footer">
                 <div className="slide_description">
-                    <div className="patterns">
-                        <svg className='svg_wrapper' width="100%" height="100%">
-                            <text className='svg_text' stroke={color} x="50%" y="60%" textAnchor="middle">
-                                {`${name} ${sub}`}
-                            </text>
-                        </svg>
-                    </div>
+                    {/* {
+                        !isTablet ? (
+                            <div className="slide_patterns">
+                                <svg className='slide_svg_wrapper' width="100%" height="100%">
+                                    <text className='slide_svg_text' stroke={color} x="50%" y="60%" textAnchor="middle">
+                                        {`${name} ${sub}`}
+                                    </text>
+                                </svg>
+                            </div>
+                        ) : null
+                    } */}
                     <div style={{ color }} className="price">{`$ ${Number(product.price).toFixed(2)}`}</div>
+                    <div className="relatedimages">
+
+                        {relatedImages.length &&
+                            relatedImages.map((img, index) => (
+                                <>
+                                    <img
+                                        src={img}
+                                        key={index}
+                                        alt={name}
+                                        onClick={(e) => {
+                                            removeborderAfterClick();
+                                            handleimages(index, e);
+                                        }}
+                                        className="imgs"
+                                    />
+                                </>
+                            ))}
+                    </div>
                     <div className="colors">
                         {
                             colorsplit?.map((cl, i) => (

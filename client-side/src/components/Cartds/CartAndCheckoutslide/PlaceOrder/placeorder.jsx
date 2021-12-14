@@ -8,11 +8,11 @@ import { placeOrder } from '../../../../Redux/actions/actions'
 import './order.css'
 function Placeorder() {
     const orderDetails = useSelector(state => state)
-    console.log(orderDetails)
     const [paypalReady, setpaypalReady] = useState(false)
     const { id } = useParams()
     const dispatch = useDispatch()
     const existingorder = orderDetails?.Orderplaced?.order?.existingorder
+    console.log(existingorder)
     const addpaypalScript = () => {
         const { data } = axios.get(`localhost:5000/api/config/paypal`)
         //TO DO : create the paypal script
@@ -83,7 +83,7 @@ function Placeorder() {
                                     </div>
                                     <div className="order_items_cart-description items-start">
                                         <div style={{ fontSize: '1.5rem', fontWeight: 'bolder' }} className="">
-                                            {item.name}
+                                            {`${item.name} ${item.sub}`}
                                         </div>
 
                                         <div className="colordescription">{item.productColor}</div>

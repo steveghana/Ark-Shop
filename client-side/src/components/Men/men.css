@@ -6,13 +6,16 @@
   bottom: 0%;
   left: 0%;
   right: 0%;
-  width: 100vw;
+  width: 100%;
   background-color: #eceef0;
   overflow: hidden;
   position: relative;
 }
 .slide_slide {
   display: flex;
+}
+.mobile_slide {
+  display: none;
 }
 .slider_slides {
   width: 100vw;
@@ -21,12 +24,32 @@
   flex-direction: column;
   align-items: center;
 }
+.relatedimages {
+  height: 100px;
+  display: flex;
+  position: relative;
+}
+.relatedimages .imgs {
+  max-width: 100px;
+  height: auto;
+  padding: 0rem;
+  margin: auto;
+  transition: all 200ms ease-in;
+}
+.slide_patterns_mobile {
+  position: absolute;
+  top: 6vh;
+  width: 100%;
+  z-index: 6;
+  left: auto;
+  right: auto;
+}
+
 .slider_slides .slide_footer {
   width: 100%;
   height: 100px;
   z-index: 2;
   margin-right: auto;
-  padding-left: 0rem;
   display: flex;
   justify-content: space-between;
 }
@@ -41,6 +64,7 @@
 .slide_description .price {
   font-size: 2rem;
   font-weight: bolder;
+  padding-left: 3rem;
 }
 .slide_description .colors,
 .colors .bar_textcolor {
@@ -54,12 +78,12 @@
   height: 20px;
   border-radius: 50%;
 }
-.patterns {
+.slide_patterns {
   min-width: 40%;
   height: auto;
 }
 
-.svg_wrapper .svg_text {
+.slide_svg_wrapper .slide_svg_text {
   font-family: "Century Gothic";
   font-size: 3rem;
   font-weight: 500;
@@ -119,7 +143,7 @@
 .product_text p {
   padding: 0.49rem 0;
 }
-.slider_slides img {
+.slider_slides .image {
   display: flex;
   margin: auto;
   top: auto;
@@ -241,65 +265,82 @@
 .button--skoll:hover::before {
   transform: translate3d(0, 100%, 0);
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1025px) {
   .slider_slides img {
     transform: scale(1, 1);
 
-    bottom: 10%;
+    /* bottom: 10%; */
   }
-  .svg_wrapper .svg_text {
-    font-size: 2rem;
-    stroke-width: 1;
+  .slide_svg_wrapper .slide_svg_text {
+    font-size: 1.6rem;
   }
   .product_text {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
     width: 70%;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem !important;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .slider_slides {
-    flex: 1 0 100%;
+  .button--skoll {
+    width: 40px;
+    height: 40px;
   }
-  .slide_slide {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    gap: 2rem;
+  .slide_description .price {
+    width: 200px;
   }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  .arrow_left,
-  .arrow_right {
-    display: none;
+  .relatedimages {
+    top: 76vh;
+    left: 0vw;
+    right: 0%;
+    position: absolute !important;
   }
 }
 @media screen and (max-width: 600px) {
-  .slider_slides img {
+  .mobile_slide img {
     transform: scale(1, 1);
 
     bottom: 10%;
   }
-  .svg_wrapper .svg_text {
-    transform: translateY(-10px);
-    font-size: 1rem;
-    stroke-width: 1;
+  .relatedimages {
+    top: 53vh;
+    left: 5vw;
+    right: 0%;
+    position: absolute !important;
   }
+  .relatedimages .imgs {
+    max-width: 150px;
+  }
+  .slide_svg_wrapper .slide_svg_text {
+    font-size: 1.6rem;
+    margin-top: 4rem;
+    transform: translateY(40px);
+  }
+  .mobile_slide .price {
+    font-size: 1rem;
+    margin: auto;
+    width: 150px;
+  }
+
   .color_text {
     display: none;
   }
   .product_text {
-    margin: auto;
     font-size: 12px;
     width: 70%;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem !important;
+    transform: translateY(59px);
   }
-  .slider_slides .slide_footer {
+
+  .mobile_slide .slide_footer {
     height: 50px;
     margin-right: auto;
   }
-  .slide_description .colors,
+  .mobile_slide .colors,
   .colors .bar_textcolor {
     gap: 0.4rem;
     justify-content: center;
@@ -313,10 +354,21 @@
     border-radius: 50%;
   }
   .slide_footer .cart_background {
-    width: 25%;
     padding: 0% 0.5rem;
     z-index: 4;
     font-size: 12px;
     color: white;
+  }
+}
+@media screen and (max-width: 600px) {
+  .relatedimages {
+    top: 20vh;
+    left: 20%;
+    right: 30%;
+    position: absolute !important;
+  }
+  .relatedimages .imgs {
+    max-width: 50px;
+    object-fit: contain;
   }
 }
