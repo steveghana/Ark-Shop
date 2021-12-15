@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { Close, ExpandMore } from "@material-ui/icons/";
 import { useDispatch } from "react-redux";
 import { Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
@@ -17,7 +16,6 @@ function Productinfo() {
     selectedItem,
     setdeletebtn,
     setimageindex,
-    imageindex,
     mobileinfo,
     setmobileinfo,
   } = useContext(UIcontext);
@@ -65,7 +63,7 @@ function Productinfo() {
     const increment = 1;
     if (numinContent < target) {
       counter.current.innerText = numinContent + increment;
-      setTimeout(handleCounter, 10);
+      setTimeout(handleCounter, 5);
     } else {
       counter.current.innerText = target.toFixed(2);
     }

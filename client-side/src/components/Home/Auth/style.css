@@ -1,3 +1,10 @@
+.auth_wrapper {
+  background-image: url(./pexels-melvin-buezo-2529146.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container {
   height: 100vh;
   display: flex;
@@ -8,7 +15,8 @@
 }
 .Paper {
   align-self: center;
-  /* background-color: #9c8c85; */
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
   color: white;
   /* transform: translateY(20vh); */
   display: flex;

@@ -25,6 +25,7 @@ function Input({
     <Grid xs={12} md={half ? 6 : 12} item>
       <TextField
         label={label}
+        color="secondary"
         name={name}
         placeholder={placeholder}
         variant="outlined"

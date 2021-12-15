@@ -25,12 +25,12 @@
   align-items: center;
 }
 .relatedimages {
-  height: 100px;
   display: flex;
   position: relative;
 }
 .relatedimages .imgs {
-  max-width: 100px;
+  transform: scale(0.8, 0.8);
+  max-width: 70px;
   height: auto;
   padding: 0rem;
   margin: auto;
@@ -135,23 +135,29 @@
   font-family: "Century Gothic";
   margin: auto auto 0 auto;
   z-index: 4;
+  overflow: hidden;
   width: 40%;
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
 }
+.product_text:hover p {
+  transform: translateY(0%);
+}
 .product_text p {
+  transition: transform 300ms ease-in;
+  transform: translateY(100%);
   padding: 0.49rem 0;
 }
 .slider_slides .image {
   display: flex;
   margin: auto;
   top: auto;
-  width: 100%;
+  width: 90%;
   object-fit: contain;
   position: absolute;
-  transform: scale(1.3, 1.3);
-  height: 100%;
+
+  height: 90%;
   left: auto;
   right: auto;
   bottom: 10%;
@@ -165,7 +171,6 @@
   top: 50vh;
   padding: 2rem;
   border-radius: 50%;
-  /* border: 2px solid black; */
 }
 .arrow_right {
   right: 5%;
@@ -266,26 +271,21 @@
   transform: translate3d(0, 100%, 0);
 }
 @media screen and (max-width: 1025px) {
-  .slider_slides img {
-    transform: scale(1, 1);
-
-    /* bottom: 10%; */
-  }
   .slide_svg_wrapper .slide_svg_text {
     font-size: 1.6rem;
   }
   .product_text {
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 14px;
-    width: 70%;
-    margin-bottom: 0rem !important;
   }
 }
 
 @media screen and (max-width: 800px) {
+  .product_text p {
+    transform: translateY(0%);
+  }
+  .product_text {
+    transform: translateY(63px);
+  }
   .button--skoll {
     width: 40px;
     height: 40px;
@@ -294,7 +294,7 @@
     width: 200px;
   }
   .relatedimages {
-    top: 76vh;
+    top: 16vh;
     left: 0vw;
     right: 0%;
     position: absolute !important;
@@ -307,13 +307,17 @@
     bottom: 10%;
   }
   .relatedimages {
-    top: 53vh;
-    left: 5vw;
-    right: 0%;
+    top: 25vh;
+    left: 20%;
+    right: 30%;
     position: absolute !important;
   }
   .relatedimages .imgs {
     max-width: 150px;
+  }
+  .relatedimages .imgs {
+    max-width: 50px;
+    object-fit: contain;
   }
   .slide_svg_wrapper .slide_svg_text {
     font-size: 1.6rem;
@@ -332,10 +336,9 @@
   .product_text {
     font-size: 12px;
     width: 70%;
+    transform: translateY(0px);
     margin-bottom: 0rem !important;
-    transform: translateY(59px);
   }
-
   .mobile_slide .slide_footer {
     height: 50px;
     margin-right: auto;
@@ -361,14 +364,4 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .relatedimages {
-    top: 20vh;
-    left: 20%;
-    right: 30%;
-    position: absolute !important;
-  }
-  .relatedimages .imgs {
-    max-width: 50px;
-    object-fit: contain;
-  }
 }

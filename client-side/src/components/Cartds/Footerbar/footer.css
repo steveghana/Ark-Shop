@@ -1,13 +1,15 @@
-.footer-bar{
-    width: 100%;
-    padding: 1rem 0rem;
-    display: flex;
-    justify-content: space-between;
+.footer-bar {
+  width: 100%;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
 }
-.footer-bar .back, .footer-bar .continue{
-    color: white;
-    padding: .80rem 2rem;
-    border-radius: 15px;
-    background-color: brown;
-    cursor: pointer;
+.footer-bar .back,
+.footer-bar .continue {
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 15px;
+  background-color: brown;
+  cursor: pointer;
 }

@@ -19,7 +19,6 @@ const reducers = combineReducers({
   Orderplaced: placedOrder,
 });
 
-// const cartItemsInlocalStorage= localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 const INITIAL_STATE = {
   user: {
     authData: localStorage.getItem("profile")

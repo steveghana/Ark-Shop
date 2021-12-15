@@ -7,7 +7,6 @@ import express from "express";
 import userSchema from "../model/usermodel.js";
 import { productInfo, allProducts } from "../data/productInfo.js";
 import orderItems from "../model/ordermodel.js";
-import e from "cors";
 (async () => {
   try {
     const existingdata = await Product.find({});
@@ -127,14 +126,11 @@ export const siginUser = async (req, res) => {
 
 export const order = async (req, res) => {
   const { _id: user } = req.body;
-  // console.log(req.body, user);
   try {
     const existingorder = await orderItems.find({ user });
-    // console.log(req.body.orderItems);
     if (req.body.orderItems.length === 0) {
       res.status(400).send({ message: "Your cart is empty" });
     } else {
-      // if (existingorder) return;
       const newOrder = new orderItems({
         orderItems: req.body.orderItems,
         shippingAddress: req.body.shippingInfo,

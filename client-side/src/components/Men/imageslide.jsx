@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-import { useMediaQuery } from '@material-ui/core'
 function Imageslide({ product, i, handlecart }) {
     const { description, name, sub, color, ProductColor, pc1, pc2, _id: id, relatedImages } = product
     const [imageindex, setimageindex] = useState(0)
@@ -13,7 +12,6 @@ function Imageslide({ product, i, handlecart }) {
         [...document.querySelectorAll(".imgs")].forEach((image) => (image.style.border = "none"));
     };
     let hexarray = [pc1, pc2]
-    const isTablet = useMediaQuery('(max-width:600px)')
     const colorsplit = ProductColor.split("/")
     return (
         <div key={i} className="slider_slides">
@@ -25,7 +23,7 @@ function Imageslide({ product, i, handlecart }) {
                 </svg>
             </div>
             <img className="image" src={relatedImages[imageindex]} alt="r2" />
-            <div className="product_text">
+            <div style={{ borderBottom: `3px solid ${color}` }} className="product_text">
                 <p>{description}</p>
             </div>
             <div className="slide_footer">
@@ -48,6 +46,7 @@ function Imageslide({ product, i, handlecart }) {
                             relatedImages.map((img, index) => (
                                 <>
                                     <img
+                                        style={{ borderBottom: `3px solid ${color}` }}
                                         src={img}
                                         key={index}
                                         alt={name}

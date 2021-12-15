@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useMediaQuery } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import { ArrowRightAlt, PrintDisabled } from '@material-ui/icons'
+import { ArrowRightAlt } from '@material-ui/icons'
 import { customslider } from './customSlider'
 import axios from 'axios'
 import Nav from '../Home/Nav/nav'
-import { addtoCart, shoppingdataAddToCart } from '../../Redux/actions/actions'
+import { shoppingdataAddToCart } from '../../Redux/actions/actions'
 import Imageslide from './imageslide'
 
 import './men.css'
@@ -15,14 +14,8 @@ function Men() {
     const dispatch = useDispatch()
     const isTablet = useMediaQuery('(max-width:600px)')
     const [qty, setqty] = React.useState(1);
-    const [info, setinfo] = useState('')
-    const [size, setsize] = useState(0)
-    const [mobilereload, setmobilereload] = useState(false)
     const [products, setproducts] = useState([])
-    console.log(products)
     const index = products.length - 1
-    // const products = useSelector((state) => state.Allproducts);
-    // console.log(products)
     const slider_container = React.useRef(null)
     const isMobile = useMediaQuery("(max-width:800px)");
     useEffect(() => {
@@ -36,11 +29,6 @@ function Men() {
 
 
     }, [products.length, isMobile])
-    // useEffect(() => {
-    //     window.addEventListener('resize', setsize(window.innerWidth))
-    //     if (size)
-    //         customslider(slider_container)
-    // }, [size])
     const handlecart = (item, quantity = 1) => {
         dispatch(shoppingdataAddToCart(item, quantity));
     };
@@ -62,7 +50,7 @@ function Men() {
                         </svg>
                     </div>
                     <img className="image" src={products[index]?.image} alt="r2" />
-                    <div className="product_text">
+                    <div style={{ borderBottom: `3px solid ${products[0]?.color}` }} className="product_text">
                         <p>{products[index]?.description}</p>
                     </div>
                     <div className="slide_footer">
@@ -112,7 +100,7 @@ function Men() {
                         ) : null
                     }
                     <img className="image" src={products[0]?.image} alt="r2" />
-                    <div className="product_text">
+                    <div style={{ borderBottom: `3px solid ${products[0]?.color}` }} className="product_text">
                         <p>{products[0]?.description}</p>
                     </div>
                     <div className="slide_footer">

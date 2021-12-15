@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { UserCartcontext } from '../cartcontext'
 import { Button } from '@material-ui/core'
-import { deleteAllItemFromCart, orderPlacement } from '../../../../Redux/actions/actions'
+import { orderPlacement } from '../../../../Redux/actions/actions'
 import './order.css'
 function Order() {
     const history = useHistory()
@@ -14,9 +14,7 @@ function Order() {
     const dispatch = useDispatch()
     const info = useSelector(state => state)
     const orderCreated = useSelector(state => state.orderPlacement)
-    console.log(orderCreated)
 
-    const [connectionStatus, setconnectionStatus] = useState({})
     const { cartItems } = info.cart
     const SHIPPING = 10
     const TAX = 11.70
@@ -41,7 +39,6 @@ function Order() {
         _id: info.user.authData.result._id
     }
 
-    // const { loading, success, error, order } = orderCreated
 
     const handlePlaceOrder = () => {
         dispatch(orderPlacement(orderItems, setcounter, counter))

@@ -9,7 +9,6 @@ import Men from "./components/Men/Men";
 import { UIcontext } from "./components/Home/uicontext";
 import Auth from "./components/Home/Auth/user";
 import "./root.css";
-import { Usercontext } from "./components/Cartds/CartAndCheckoutslide/cartcontext";
 function App() {
   const [background, setbackground] = useState(null);
   const initialstate = {

@@ -1,12 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  useMediaQuery,
-  Toolbar,
-  Button,
-  Avatar,
-  Typography,
-} from "@material-ui/core";
+import { useMediaQuery, Toolbar, Button, Typography } from "@material-ui/core";
 import "./nav.css";
 import { logout } from "../../../Redux/actions/auth";
 import useStyles from "./styles";
@@ -67,7 +61,7 @@ function Nav({ morebutton, black }) {
           color: productinformation ? color : black,
         }}
       >
-        arch
+        ark
       </div>
       <div
         className="contact-bagnum"

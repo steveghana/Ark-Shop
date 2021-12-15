@@ -3,7 +3,7 @@
 }
 .cart_slide-container {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
 }
 .cart_slide-container .individual-slide {
   display: flex;
@@ -17,7 +17,7 @@
 .slide3,
 .slide4,
 .slide5 {
-  height: 80vh;
+  height: 75vh;
   flex: 1 0 100%;
   overflow-y: scroll;
   margin: auto;

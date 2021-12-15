@@ -4,7 +4,6 @@ import Productinfo from "../productinfo/productinfo";
 import "./homeSelection.css";
 import Spinner from "../../spinner/Spinner";
 import { useSelector } from "react-redux";
-import { CircularProgress } from "@material-ui/core";
 import {
   img1Hover,
   reset,

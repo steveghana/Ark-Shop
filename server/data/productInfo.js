@@ -286,10 +286,10 @@ export const allProducts = [
     sizes: ["5", "5.5", "6", "6.5", "8.5", "9"],
     image: "/img/Kaptir_2.0_Shoes_Black_H00275_01_standard.jpg",
     relatedImages: [
-      "/img/HU_NMD_Shoes_Blue_GY0094_01_standard56.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_04_standardgg.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_05_standardgf.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_011_hover_standardtr.png",
+      "/img/Kaptir_2.0_Shoes_Black_H00275_01_standard.jpg",
+      "/img/Kaptir_2.0_Shoes_Black_H00275_04_standard.jpg",
+      "/img/Kaptir_2.0_Shoes_Black_H00275_05_standard.jpg",
+      "/img/Kaptir_2.0_Shoes_Black_H00279_02_standard_hover.jpg",
     ],
     specifications: [
       "Lace closure",
@@ -350,9 +350,9 @@ export const allProducts = [
     image: "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_01_standard.jpg",
     relatedImages: [
       "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_01_standard.jpg",
-      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_04_standardgf.jpg",
-      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_05_standardfgfg.jpg",
-      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_05_standardfgfg.jpg",
+      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_04_standardgf.png",
+      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_05_standardfgfg.png",
+      "/img/NMD_R1_Primeknit_Shoes_Yellow_S23749_04_standardgf.png",
     ],
     ProductColor: "Yellow / Yellow / Yellow",
     productcolorHex: [],
@@ -418,10 +418,10 @@ export const allProducts = [
     sizes: ["5", "5.5", "6", "6.5", "8.5", "9"],
     image: "/img/Stan_Smith_Shoes_White_FX5502_01_standard (1).jpg",
     relatedImages: [
-      "/img/HU_NMD_Shoes_Blue_GY0094_01_standard56.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_04_standardgg.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_05_standardgf.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_011_hover_standardtr.png",
+      "/img/Stan_Smith_Shoes_White_FX5502_01_standard (1).jpg",
+      "/img/Stan_Smith_Shoes_White_FX5502_02_standard_hover.jpg",
+      "/img/Stan_Smith_Shoes_White_FX5502_04_standard.jpg",
+      "/img/Stan_Smith_Shoes_White_FX5502_05_standard.jpg",
     ],
     specifications: [
       "Lace closure",
@@ -450,10 +450,10 @@ export const allProducts = [
     sizes: ["5", "5.5", "6", "6.5", "8.5", "9"],
     image: "/img/Multix_Shoes_Black_H04479_01_standard.jpg",
     relatedImages: [
-      "/img/HU_NMD_Shoes_Blue_GY0094_01_standard56.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_04_standardgg.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_05_standardgf.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_011_hover_standardtr.png",
+      "/img/Multix_Shoes_Black_H04479_01_standard.jpg",
+      "/img/Multix_Shoes_Black_H04479_02_standard_hover.jpg",
+      "/img/Multix_Shoes_Black_H04479_04_standard.jpg",
+      "/img/Multix_Shoes_Black_H04479_05_standard.jpg",
     ],
     specifications: [
       "Lace closure",
@@ -482,10 +482,10 @@ export const allProducts = [
     sizes: ["5", "5.5", "6", "6.5", "8.5", "9"],
     image: "/img/Forum_Low_Shoes_White_FY7756_01_standard.jpg",
     relatedImages: [
-      "/img/HU_NMD_Shoes_Blue_GY0094_01_standard56.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_04_standardgg.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_05_standardgf.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_011_hover_standardtr.png",
+      "/img/Forum_Low_Shoes_White_FY7756_01_standard.jpg",
+      "/img/Forum_Low_Shoes_White_FY7756_02_standard_hover.jpg",
+      "/img/Forum_Low_Shoes_White_FY7756_04_standard.jpg",
+      "/img/Forum_Low_Shoes_White_FY7756_05_standard.jpg",
     ],
     specifications: [
       "Lace closure with removeable strap",
@@ -512,10 +512,10 @@ export const allProducts = [
     sizes: ["5", "5.5", "6", "6.5", "8.5", "9"],
     image: "/img/ZX_2K_Boost_2.0_Trail_Shoes_Beige_GZ7783_01_standard.jpg",
     relatedImages: [
-      "/img/HU_NMD_Shoes_Blue_GY0094_01_standard56.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_04_standardgg.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_05_standardgf.png",
-      "/img/HU_NMD_Shoes_Blue_GY0094_011_hover_standardtr.png",
+      "/img/ZX_2K_Boost_2.0_Trail_Shoes_Beige_GZ7783_01_standard.jpg",
+      "/img/ZX_2K_Boost_2.0_Trail_Shoes_Beige_GZ7783_02_standard_hover.jpg",
+      "/img/ZX_2K_Boost_2.0_Trail_Shoes_Beige_GZ7783_04_standard.jpg",
+      "/img/ZX_2K_Boost_2.0_Trail_Shoes_Beige_GZ7783_05_standard.jpg",
     ],
     specifications: [
       "Lace closure",

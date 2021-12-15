@@ -5,20 +5,11 @@ import {
   ORDER_CREATE_SUCCESS,
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
-  ORDER_DETAILS_RESET,
   ORDER_DETAILS_SUCCESS,
 } from "../constants/orderconstants";
 import * as constants from "../constants/constantsl";
-const {
-  FETCHALL,
-  FETCH,
-  CART,
-  DELETECART,
-  DELETE,
-  SHIPPING,
-  SHIPPINGMETHOD,
-  ORDERPLACEMENT,
-} = constants;
+const { FETCHALL, FETCH, CART, DELETECART, DELETE, SHIPPING, SHIPPINGMETHOD } =
+  constants;
 export const getProductinfo = () => async (dispatch) => {
   try {
     const { data } = await api.getProducts();
