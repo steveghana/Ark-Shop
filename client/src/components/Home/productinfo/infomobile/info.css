@@ -1,0 +1,26 @@
+.mobile-description {
+  display: none;
+}
+.show-mobile-info {
+  display: flex;
+  position: absolute;
+  box-shadow: 0px 0px 2rem -3px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: auto;
+  width: 70%;
+  top: 20%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  color: white;
+  z-index: 14;
+  padding: 1rem 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .show-mobile-info {
+    top: 18%;
+    width: 90%;
+  }
+}

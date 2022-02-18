@@ -1,0 +1,46 @@
+.shipping-container {
+  max-width: 50%;
+  margin: auto;
+  display: flex;
+  margin-top: 3rem;
+  /* justify-content: center; */
+}
+.shipping_wrapper {
+  flex-direction: column;
+  display: flex;
+  /* align-items: center; */
+  gap: 1rem;
+  width: 100%;
+}
+.shipping-container .name,
+.shipping-container .email-phone,
+.shipping-container .state-address,
+.shipping-container .country-city-zip {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.shipping-container .name .first-name,
+.shipping-container .name .second-name .shipping-container .email-phone .email,
+.shipping-container .email-phone .phone,
+.shipping-container .country-city-zip .country,
+.shipping-container .country-city-zip .city,
+.shipping-container .country-city-zip .zip,
+.shipping-container .state-address .state,
+.shipping-container .state-address .address {
+  /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+}
+
+@media only screen and (max-width: 1000px) {
+  .shipping-container .name,
+  .shipping-container .email-phone,
+  .shipping-container .state-address,
+  .shipping-container .country-city-zip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}

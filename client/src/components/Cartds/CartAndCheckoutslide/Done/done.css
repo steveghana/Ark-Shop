@@ -1,0 +1,79 @@
+.ordered-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  margin-top: 8rem;
+}
+.ordered-container .bubble-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.bubble-container .bubble {
+  padding: 2rem;
+  border-radius: 50%;
+  background-color: salmon;
+}
+.bubble-container .bubble::after,
+.bubble-container .bubble::before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  background-color: salmon;
+}
+.bubble-container::after,
+.bubble-container::before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  background-color: salmon;
+}
+.bubble-container .bubble::after {
+  top: 0%;
+  left: -5%;
+  width: 10px;
+  height: 10px;
+}
+.bubble-container .bubble::before {
+  bottom: 0%;
+  width: 30px;
+  height: 30px;
+  left: -15%;
+}
+.bubble-container::after {
+  top: 0%;
+  right: -20%;
+  width: 40px;
+  height: 40px;
+}
+.bubble-container::before {
+  bottom: 0%;
+  width: 20px;
+  height: 20px;
+  right: -15%;
+}
+
+.ordered-container .ordered-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+}
+.ordered-container .ordered .description {
+  font-size: 1rem;
+}
+.ordered-container .back-to-shop {
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  background-color: salmon;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+.ordered-container .back-to-shop:hover {
+  background-color: rgb(221, 112, 99);
+}

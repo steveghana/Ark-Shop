@@ -1,0 +1,100 @@
+:root {
+  --border-color: rgb(230, 230, 230);
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  font-family: "Century Gothic", sans-serif;
+  gap: 6rem;
+  margin: 3rem 0rem;
+}
+.empty_cart {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.5rem;
+}
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+.cart-item .img {
+  background-color: var(--border-color);
+}
+.cart-item .img img {
+  max-width: 200px;
+}
+.cart-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.cart-description .color {
+  position: relative;
+}
+.cart-description .color .item-colorDesc {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -50%;
+  bottom: 10%;
+  border-radius: 2px;
+}
+.cart-description .cart-size .cart-sizes {
+  background-color: salmon;
+  border-radius: 5px;
+  padding: 0.1rem 0.2rem;
+}
+.cart-description .cart-size {
+  display: flex;
+  gap: 0.5rem;
+}
+.incrementDecrement {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+  align-items: center;
+}
+.increment,
+.decrement {
+  padding: 0.1rem 0.6rem;
+  border-radius: 15px;
+  font-size: 2rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  transition: color 300ms ease-in;
+  color: var(--border-color);
+  border: 3px solid var(--border-color);
+}
+.increment:hover,
+.decrement:hover {
+  color: salmon;
+}
+.amount {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 2rem;
+}
+.delete-item {
+  font-size: 1.3rem;
+  padding: 0.7rem 1rem;
+  background-color: salmon;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 1000px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 1em 0px rgba(0, 0, 0, 0.2);
+    padding: 0.3rem;
+  }
+}

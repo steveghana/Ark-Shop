@@ -1,0 +1,12 @@
+export const AUTH = "AUTH";
+export const AUTHERROR = "AUTHERROR";
+export const LOGOUT = "LOGOUT";
+export const FETCH = "FETCH";
+export const FETCHALL = "FETCHALL";
+export const CART = "CART ITEMS";
+export const DELETECART = "DELETE ALL CARTITEMS";
+export const DELETE = "DELETE ITEMS";
+export const SHIPPING = "SHIPPING";
+export const SHIPPINGMETHOD = "SHIPPINGMETHOD";
+export const ORDERPLACEMENT = "ORDERPLACEMENT";
+export const PLACEORDER = "PLACEORDER";
