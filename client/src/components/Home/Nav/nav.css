@@ -68,8 +68,8 @@ nav .arch,
   letter-spacing: 3px;
   font-weight: 600;
   margin: 0 auto 0 auto;
-  font-family: "Century Gothic";
-  transform: translateX(10vw);
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+  transform: translateX(2vw);
 }
 .userinfo {
   position: relative;

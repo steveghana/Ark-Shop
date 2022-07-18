@@ -40,6 +40,7 @@ function Productinfo() {
   const counter = useRef("");
 
   const handlecart = (item, qty) => {
+    console.log(item);
     dispatch(addtoCart(item, qty, size));
   };
 

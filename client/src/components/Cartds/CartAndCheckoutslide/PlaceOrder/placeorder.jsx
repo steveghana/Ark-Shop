@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, {  useContext,useState } from "react";
+import { Button } from "@material-ui/core";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { CheckCircleOutlineOutlined, WarningRounded } from "@material-ui/icons";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +9,7 @@ import { placeOrder } from "../../../../Redux/actions/actions";
 import "./order.css";
 function Placeorder() {
   const orderDetails = useSelector((state) => state);
+  console.log(orderDetails)
   const [paypalReady, setpaypalReady] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ function Placeorder() {
     };
     document.body.appendChild(script);
   };
+
   React.useEffect(() => {
     dispatch(placeOrder(id));
   }, [id, dispatch]);
@@ -145,10 +148,12 @@ function Placeorder() {
           </div>
         </div>
         <div>
-          Paypal not activated for demo purposes, return to{" "}
-          <a href="/home">homepage</a> to explore more
+        {existingorder?.paymentMethod || 'Payment method'} not activated for demo purposes, return to{" "}
+          <a href="/">homepage</a> to explore more, or you can place order anyway
         </div>
-        {/* <Button onClick={handlePlaceOrder} fullWidth variant='contained' color='secondary'>Place Order</Button> */}
+        <Link to='/done' style={{textDecoration:'none'}}>
+        <Button fullWidth variant='contained' color='secondary'>Place Order</Button>
+        </Link>
         {/* {orderCreated?.loading && <CircularProgress />} */}
         {/* {orderCreated?.error && <Typography variant='body1' color='secondary'>{orderCreated?.error}</Typography>} */}
       </div>

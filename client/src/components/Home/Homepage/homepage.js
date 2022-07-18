@@ -166,7 +166,7 @@ function enableFullInterface(
   setdeletebtn(true);
   selectedProduct(e.target, homeContainer.current, morebutton.current);
   setState({
-    id: product._id,
+    id: product.id,
     name: product.name,
     sub: product.sub,
     color: product?.color,

@@ -10,7 +10,7 @@ import Imageslide from "./imageslide";
 import Spinner from "../spinner/Spinner";
 import "./men.css";
 function Men() {
-  const EndPoint = `https://arkshop12.herokuapp.com/productsinfo`;
+  const EndPoint = `http://localhost:5000/productsinfo`;
 
   const dispatch = useDispatch();
   const [isloading, setisLoading] = React.useState(false);
@@ -20,6 +20,7 @@ function Men() {
   const index = products.length - 1;
   const isMobile = useMediaQuery("(max-width:800px)");
   useEffect(() => {
+ 
     let abortController = new AbortController();
     (async () => {
       setisLoading(true);
@@ -33,7 +34,7 @@ function Men() {
     };
   }, []);
   const handlecart = (item, quantity = 1) => {
-    dispatch(addtoCart(item, quantity));
+     dispatch(addtoCart(item, quantity));
   };
   useEffect(() => {
     !isloading && customslider();
@@ -121,7 +122,7 @@ function Men() {
             </div>
             <div
               style={{ background: products[index]?.color }}
-              onClick={() => handlecart(products[index]?.id, qty)}
+              onClick={() => handlecart(index, qty)}
               className="cart_background"
             >
               add to cart

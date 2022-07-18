@@ -65,30 +65,6 @@ function Nav({ morebutton, black }) {
         ark
       </div>
       <div className="contact-bagnum" style={{ color: inertcolors() }}>
-        {/* <Toolbar className={classes.Toolbar}>
-          {user && (
-            <div className="userinfo">
-              <div onClick={showDialog} className="avatar_drop">
-                <Typography>{`${
-                  user?.result?.firstName || user?.firstName
-                }`}</Typography>
-                <ArrowDropDown />
-              </div>
-              {showuserbox ? (
-                <div className="dialogbox">
-                  <Button
-                    component={Link}
-                    to="/"
-                    variant="outlined"
-                    onClick={handlelogout}
-                  >
-                    Logout
-                  </Button>
-                </div>
-              ) : null}
-            </div>
-          )}
-        </Toolbar> */}
         <Link
           style={{
             color: "white",

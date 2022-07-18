@@ -7,8 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cards from "./components/Cartds/Cards";
 import Men from "./components/Men/Men";
 import { UIcontext } from "./components/Home/uicontext";
-import Auth from "./components/Home/Auth/user";
+// import Auth from "./components/Home/Auth/user";
 import "./root.css";
+import Done from "./components/Cartds/CartAndCheckoutslide/Done/done";
 function App() {
   const [background, setbackground] = useState(null);
   const initialstate = {
@@ -43,7 +44,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductinfo());
-    dispatch(getallproducts());
+    // dispatch(getallproducts());
   }, [dispatch]);
 
   return (
@@ -72,10 +73,10 @@ function App() {
       <div className="home_wrapper">
         <Router>
           <Routes>
-            {/* <Route exact path="/" element={<Auth />}></Route> */}
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/cart" element={<Cards />}></Route>
             <Route exact path="/men" element={<Men />}></Route>
+            <Route exact path="/done" element={<Done />}></Route>
             <Route path="/order/:id" element={<Placeorder />}></Route>
           </Routes>
         </Router>

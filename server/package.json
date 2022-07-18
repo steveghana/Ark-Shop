@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -21,6 +21,7 @@
     "immer": "^9.0.6",
     "json": "^11.0.0",
     "jsonwebtoken": "^8.5.1",
+    "lowdb": "^3.0.0",
     "mongoose": "^5.13.3",
     "nodemon": "^2.0.15",
     "request-promise": "^4.2.6",

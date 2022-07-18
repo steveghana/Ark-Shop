@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 function Imageslide({ product, i, handlecart }) {
-    const { description, name, sub, color, ProductColor, pc1, pc2, _id: id, relatedImages } = product
+
+    const { description, name, sub, color, ProductColor, pc1, pc2, id, relatedImages } = product
+    console.log(id)
     const [imageindex, setimageindex] = useState(0)
 
     const [qty, setqty] = React.useState(1);

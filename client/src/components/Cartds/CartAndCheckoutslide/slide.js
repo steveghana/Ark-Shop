@@ -63,7 +63,10 @@ function Slide({
         <div className="slide4" style={{ display: counter > 3 && "none" }}>
           <Order />
         </div>
-        <div className="slide5">{/* <Done setdone={setdone} /> */}</div>
+        <div
+          style={{ display: counter > 3 && "none" }}
+          className="slide5"
+        ></div>
       </div>
     </div>
   );

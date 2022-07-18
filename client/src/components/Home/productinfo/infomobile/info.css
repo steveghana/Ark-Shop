@@ -1,6 +1,12 @@
 .mobile-description {
   display: none;
 }
+.mobile-bio{
+  display: flex;
+flex-wrap: wrap;
+width: 100%;
+gap: 2rem;
+}
 .show-mobile-info {
   display: flex;
   position: absolute;

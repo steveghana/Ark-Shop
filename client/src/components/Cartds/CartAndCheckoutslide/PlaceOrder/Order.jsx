@@ -37,7 +37,8 @@ function Order() {
         shippingInfo: shippingData,
         itemsPrice: Number(getCartTotal()),
         total: calculateTotal(),
-        _id: info?.user?.authData?.result?._id
+        id: info?.user?.authData?.result?.id,
+        counter
     }
 
 
@@ -48,8 +49,9 @@ function Order() {
     }
 
     React.useEffect(() => {
+        console.log(orderCreated)
         if (orderCreated?.success) {
-            navigate(`/order/${orderCreated?.order.newsavedOrder._id}`)
+            navigate(`/order/${orderCreated?.order.newOrder?.user}`)
             dispatch({ type: constants.ORDER_CREATE_RESET })
         }
     }, [orderCreated?.success, navigate, orderCreated?.order, dispatch])
