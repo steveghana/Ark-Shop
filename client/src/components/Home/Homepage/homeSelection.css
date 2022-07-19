@@ -188,7 +188,7 @@
   position: absolute;
   -webkit-transform: translateX(-120px);
   transform: translateX(-120px);
-  top: -10%;
+  top: -5%;
   left: 0%;
   -webkit-transition: -webkit-transform 1s ease-in;
   transition: -webkit-transform 1s ease-in;
@@ -386,11 +386,11 @@
 }
 
 .home-selection .grow .img {
-  height: 550px;
+  height: 500px;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  -webkit-transform: rotate(0deg) translate(-5%, 25%);
-  transform: rotate(0deg) translate(-5%, 25%);
+  -webkit-transform: rotate(0deg) translate(-10%, 11vh);
+  transform: rotate(0deg) translate(-10%,11vh);
   -webkit-transition: all 800ms ease-in 200ms;
   transition: all 800ms ease-in 200ms;
 }
@@ -400,19 +400,19 @@
   .home-selection .select2 img,
   .home-selection .select3 img,
   .home-selection .select4 img {
-    padding: 6rem;
-    -webkit-transform: rotate(50deg) translate(-15%, 15%);
-    transform: rotate(50deg) translate(-15%, 15%);
+    padding: 4rem;
+    -webkit-transform: rotate(50deg) translate(-5%, 5%);
+    transform: rotate(50deg) translate(-5%, 5%);
   }
   .home-selection .grow .pname {
-    transform: translateY(-50%);
+    transform: translateY(-40%);
   }
   .home-selection.shrink .img {
     height: 500px;
     -webkit-transition: all 700ms ease-in;
     transition: all 700ms ease-in;
-    -webkit-transform: rotate(0deg) translate(-20%, -0%);
-    transform: rotate(0deg) translate(-20%, -0%);
+    -webkit-transform: rotate(0deg) translate(-20%, 7%);
+    transform: rotate(0deg) translate(-20%, 7%);
     margin-top: 0rem;
   }
 

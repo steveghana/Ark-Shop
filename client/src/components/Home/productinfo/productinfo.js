@@ -211,10 +211,12 @@ function Productinfo() {
               <div className="product-details">{description}</div>
               <div className="product-bio">
                 <h2 className="bio_header">Specs</h2>
-                {specifications.length &&
-                  specifications.map((item, index) => (
-                    <div key={index}>{item}</div>
-                  ))}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                  {specifications.length &&
+                    specifications.map((item, index) => (
+                      <div key={index}>{item}</div>
+                    ))}
+                </div>
               </div>
             </div>
           </div>

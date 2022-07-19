@@ -139,7 +139,7 @@
 }
 .product-description .about-Product.fullheight {
   transition: all 700ms ease-in;
-  padding: 1rem 4rem 1rem 6rem;
+  padding: 1rem 1rem 1rem 2rem;
   transform: translateY(0%);
 }
 .product-description .info-toggle {
@@ -169,12 +169,12 @@
 }
 
 .product-bio {
-  gap: 2rem;
+  gap: 1rem;
   font-size: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family:'Century Gothic', Arial, Helvetica, sans-serif;
+  font-family:'Century Gothic', sans-serif;
   letter-spacing: 1px;
 }
 .product-bio .bio_header {
@@ -186,7 +186,7 @@
 .product-bio .right {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 @media only screen and (max-width: 1100px) {

@@ -1,16 +1,17 @@
-import { db } from "../index.js";
-export const getAllproducts = async (req, res) => {
+import { db } from "../data/productInfo.js";
+
+export const getAllproducts = (req, res) => {
   try {
-    const Allproductinformation = await db.data.allProducts;
-    res.status(200).json(Allproductinformation);
+    const Allproductinformation = db.allProducts;
+    res.status(200).send(Allproductinformation);
   } catch (error) {
     res.status(404).send("Server Error");
   }
 };
-export const getProducts = async (req, res) => {
+export const getProducts = (req, res) => {
   try {
-    const productinformation = await db.data.productInfo;
-    res.status(200).json(productinformation);
+    const productinformation = db.productInfo;
+    res.status(200).send(productinformation);
   } catch (error) {
     res.status(404).send("Server Error");
   }
@@ -18,11 +19,11 @@ export const getProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
   const { id } = req.params;
   try {
-    const allproducts = await db.data.allProducts;
+    const allproducts = db.allProducts;
     const Alldata = allproducts.find((item) => item.id === Number(id));
     if (Alldata) {
-      res.status(200).json(Alldata);
-    } else res.status(400).json("no user with id found");
+      res.status(200).send(Alldata);
+    } else res.status(400).send("no user with id found");
   } catch (error) {
     res.status(404);
   }
@@ -45,7 +46,7 @@ export const order = async (req, res) => {
         user: randomId,
         counter: req.body?.counter,
       };
-      await db.data?.orderItems?.push(newOrder);
+      db.orderItems?.push(newOrder);
       res.status(200).send({ message: "New order placed", newOrder });
     }
   } catch (error) {
@@ -53,7 +54,7 @@ export const order = async (req, res) => {
   }
 };
 
-export const paypalConfig = async (req, res) => {
+export const paypalConfig = (req, res) => {
   try {
     res.send("paypal route now active");
   } catch (error) {
@@ -61,10 +62,10 @@ export const paypalConfig = async (req, res) => {
   }
 };
 
-export const getPlacedOrder = async (req, res) => {
+export const getPlacedOrder = (req, res) => {
   const { id } = req.params;
   try {
-    const existingorder = await db.data.orderItems.find(
+    const existingorder = db.orderItems.find(
       (item) => item.user === Number(id)
     );
     if (existingorder) {

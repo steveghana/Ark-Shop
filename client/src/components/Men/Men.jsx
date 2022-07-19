@@ -10,7 +10,8 @@ import Imageslide from "./imageslide";
 import Spinner from "../spinner/Spinner";
 import "./men.css";
 function Men() {
-  const EndPoint = `http://localhost:5000/productsinfo`;
+  const url = 'http://localhost:5000/productsinfo'
+  // const EndPoint = `https://arkshop3.herokuapp.com/productsinfo`;
 
   const dispatch = useDispatch();
   const [isloading, setisLoading] = React.useState(false);
@@ -24,7 +25,7 @@ function Men() {
     let abortController = new AbortController();
     (async () => {
       setisLoading(true);
-      const { data } = await axios.get(`${EndPoint}/all`);
+      const { data } = await axios.get(`${url}/all`);
       setproducts(data);
       setisLoading(false);
     })();
