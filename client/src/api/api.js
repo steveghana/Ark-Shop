@@ -1,6 +1,7 @@
 import axios from "axios";
-// const url= "https://arkshop3.herokuapp.com"
-const API = axios.create({ baseURL: "http://localhost:5000" });
+
+const url = "https://arkshop3.herokuapp.com";
+const API = axios.create({ baseURL: url });
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
     req.headers.authorisation = `Bearer ${

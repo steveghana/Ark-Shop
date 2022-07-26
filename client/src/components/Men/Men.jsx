@@ -10,8 +10,7 @@ import Imageslide from "./imageslide";
 import Spinner from "../spinner/Spinner";
 import "./men.css";
 function Men() {
-  const url = 'http://localhost:5000/productsinfo'
-  // const EndPoint = `https://arkshop3.herokuapp.com/productsinfo`;
+  const EndPoint = `https://arkshop3.herokuapp.com/productsinfo`;
 
   const dispatch = useDispatch();
   const [isloading, setisLoading] = React.useState(false);
@@ -21,11 +20,10 @@ function Men() {
   const index = products.length - 1;
   const isMobile = useMediaQuery("(max-width:800px)");
   useEffect(() => {
- 
     let abortController = new AbortController();
     (async () => {
       setisLoading(true);
-      const { data } = await axios.get(`${url}/all`);
+      const { data } = await axios.get(`${EndPoint}/all`);
       setproducts(data);
       setisLoading(false);
     })();
@@ -35,7 +33,7 @@ function Men() {
     };
   }, []);
   const handlecart = (item, quantity = 1) => {
-     dispatch(addtoCart(item, quantity));
+    dispatch(addtoCart(item, quantity));
   };
   useEffect(() => {
     !isloading && customslider();
